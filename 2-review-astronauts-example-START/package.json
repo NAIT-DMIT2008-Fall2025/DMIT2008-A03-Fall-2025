@@ -1,0 +1,18 @@
+{
+  "name": "npm-review-with-astronauts",
+  "version": "0.0.1",
+  "description": "Just some javascript review",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel index.html",
+    "build": "parcel build"
+  },
+  "author": "Danny",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.8"
+  },
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  }
+}
