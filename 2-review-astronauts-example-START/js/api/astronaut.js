@@ -1,4 +1,5 @@
-const BASE_URL = "https://lldev.thespacedevs.com/2.2.0"
+// bump version from 2.2.0 to 2.3.0
+const BASE_URL = "https://lldev.thespacedevs.com/2.3.0"
 
 // api functions here.
 
