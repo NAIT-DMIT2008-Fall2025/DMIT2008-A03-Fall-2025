@@ -37,12 +37,3 @@ const renderAstronaut = (astronaut) => {
 // data inside
 // export and use in you index.js
 export {renderAstronaut}
-
-
-
-
-
-
-
-
-
