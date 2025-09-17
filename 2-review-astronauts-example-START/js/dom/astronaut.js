@@ -18,15 +18,16 @@ replace the instances that have "THIS FORMAT HERE" with the astronautData.
 
 // I want you to create a function called "renderAstronaut"
 const renderAstronaut = (astronaut) => {
-  console.log(astronaut.image.thumbnail_url)
+  // since nationality is an array I'm going to select the first one.
+  const NATIONALITY = astronaut.nationality[0].name
   return `<li href="#" class="list-group-item list-group-item-action">
       <div class="d-flex w-100 justify-content-between">
           <img src="${astronaut.image.thumbnail_url}" class="rounded float-start" alt=""">
           <h5 class="mb-1">${astronaut.name}(${astronaut.status.name})</h5>
-          <small class="float-end">born DATE OF BIRTH HERE</small>
+          <small class="float-end">born ${astronaut.date_of_birth}</small>
       </div>
-      <small>ASTRONAUT NATIONALITY HERE (ASTRONAUT AGENCY NAME)</small>
-      <p class="mb-1">ASTRONAUT BIO HERE </p>
+      <small>${NATIONALITY} (${astronaut.agency.abbrev})</small>
+      <p class="mb-1">${astronaut.bio} </p>
   </li>`
 }
 
