@@ -3,3 +3,6 @@
 // packaging is to import your css.
 import 'bootstrap/dist/css/bootstrap.min.css';
 // js here.
+
+
+console.log('our astronauts app')
