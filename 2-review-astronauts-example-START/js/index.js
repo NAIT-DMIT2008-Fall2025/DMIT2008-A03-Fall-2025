@@ -5,7 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // inside of the index.js we're going to import this.
 import { getAstronautList } from './api/astronaut';
-
+// import from the dom
+import { renderAstronaut } from './dom/astronaut';
 
 
 const app = async () => {
@@ -15,11 +16,11 @@ const app = async () => {
   // call this function
   // call our getAstronautData and console it out to the page.
   const astronautData = await getAstronautList()
-  console.log('astronaut data fetched')
-  console.log(astronautData)
-  // I'm going to loop through each astronaut
-  console.log(Array.isArray(astronautData)) // is not an array it's an obj.
-  console.log(Array.isArray(astronautData.results)) // is  an array
+  // console.log('astronaut data fetched')
+  // console.log(astronautData)
+  // // I'm going to loop through each astronaut
+  // console.log(Array.isArray(astronautData)) // is not an array it's an obj.
+  // console.log(Array.isArray(astronautData.results)) // is  an array
 
   // we're going to select the astronaut-list
   let astronautListElement = document.querySelector(".astronaut-list")
@@ -30,7 +31,7 @@ const app = async () => {
     // we're going to continously add to the list element
     // what we're going to do is we're going to create function
     // that it going to render all of the information.
-    astronautListElement.innerHTML += astronaut.name
+    astronautListElement.innerHTML += renderAstronaut(astronaut)
   })
 }
 
