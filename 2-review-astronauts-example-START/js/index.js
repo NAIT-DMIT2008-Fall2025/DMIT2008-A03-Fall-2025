@@ -21,11 +21,16 @@ const app = async () => {
   console.log(Array.isArray(astronautData)) // is not an array it's an obj.
   console.log(Array.isArray(astronautData.results)) // is  an array
 
+  // we're going to select the astronaut-list
+  let astronautListElement = document.querySelector(".astronaut-list")
   astronautData.results.map((astronaut, index)=> {
     // On the page I want to render each astronaut
     console.log("Astronaut: " + index)
     console.log(astronaut)
-
+    // we're going to continously add to the list element
+    // what we're going to do is we're going to create function
+    // that it going to render all of the information.
+    astronautListElement.innerHTML += astronaut.name
   })
 }
 

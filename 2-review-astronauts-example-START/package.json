@@ -2,9 +2,10 @@
   "name": "npm-review-with-astronauts",
   "version": "0.0.1",
   "description": "Just some javascript review",
+  "source": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel index.html",
+    "dev": "parcel",
     "build": "parcel build"
   },
   "author": "Danny",
