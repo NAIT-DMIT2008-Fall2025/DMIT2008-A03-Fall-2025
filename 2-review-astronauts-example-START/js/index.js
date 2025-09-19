@@ -16,11 +16,18 @@ const app = async () => {
   // call this function
   // call our getAstronautData and console it out to the page.
   const astronautData = await getAstronautList()
+  // we could use object destructuring
+  let {results} = astronautData
+  console.log(`astronautData`,astronautData)
+
+  console.log(`results`,results)
   // console.log('astronaut data fetched')
   // console.log(astronautData)
   // // I'm going to loop through each astronaut
   // console.log(Array.isArray(astronautData)) // is not an array it's an obj.
   // console.log(Array.isArray(astronautData.results)) // is  an array
+
+
 
   // we're going to select the astronaut-list
   let astronautListElement = document.querySelector(".astronaut-list")

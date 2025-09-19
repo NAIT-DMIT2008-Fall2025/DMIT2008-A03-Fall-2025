@@ -21,25 +21,26 @@ replace the instances that have "THIS FORMAT HERE" with the astronautData.
 // we can use the ideas of object destructuring inside of the function arguments
 
 const renderAstronaut = ({
-  nationality,
-  image,
-  name,
-  status,
-  date_of_birth,
-  agency,
-  bio
+  nationality, // these are keys of the object passed in
+  image, // these are keys of the object passed in
+  name, // these are keys of the object passed in
+  status, // these are keys of the object passed in
+  date_of_birth, // these are keys of the object passed in
+  agency, // these are keys of the object passed in
+  bio // these are keys of the object passed in
 }) => {
 
   // since nationality is an array I'm going to select the first one.
-  const NATIONALITY = astronaut.nationality[0].name
+  // let's remove the astronaut. because we've destructure that obj.
+  const NATIONALITY = nationality[0].name
   return `<li href="#" class="list-group-item list-group-item-action">
       <div class="d-flex w-100 justify-content-between">
-          <img src="${astronaut.image.thumbnail_url}" class="rounded float-start" alt=""">
-          <h5 class="mb-1">${astronaut.name}(${astronaut.status.name})</h5>
-          <small class="float-end">born ${astronaut.date_of_birth}</small>
+          <img src="${image.thumbnail_url}" class="rounded float-start" alt=""">
+          <h5 class="mb-1">${name}(${status.name})</h5>
+          <small class="float-end">born ${date_of_birth}</small>
       </div>
-      <small>${NATIONALITY} (${astronaut.agency.abbrev})</small>
-      <p class="mb-1">${astronaut.bio} </p>
+      <small>${NATIONALITY} (${agency.abbrev})</small>
+      <p class="mb-1">${bio} </p>
   </li>`
 }
 
