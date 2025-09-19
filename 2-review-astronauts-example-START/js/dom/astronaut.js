@@ -17,7 +17,19 @@ replace the instances that have "THIS FORMAT HERE" with the astronautData.
 // to get some of this data.
 
 // I want you to create a function called "renderAstronaut"
-const renderAstronaut = (astronaut) => {
+// we know that astronaut is an object
+// we can use the ideas of object destructuring inside of the function arguments
+
+const renderAstronaut = ({
+  nationality,
+  image,
+  name,
+  status,
+  date_of_birth,
+  agency,
+  bio
+}) => {
+
   // since nationality is an array I'm going to select the first one.
   const NATIONALITY = astronaut.nationality[0].name
   return `<li href="#" class="list-group-item list-group-item-action">
