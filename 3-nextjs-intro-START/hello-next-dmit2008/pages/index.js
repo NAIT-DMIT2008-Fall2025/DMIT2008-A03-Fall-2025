@@ -1,5 +1,8 @@
-
-
+// we're going to import this file using the @ which is
+// the base of our react project
+import LearningList from "@/components/LearningList";
+// just a note here, there's no {} around LearningList
+// that is because it's a default export
 
 // we'll see this a bit later on but pages
 // in the app and pages router of next.js are
@@ -10,6 +13,8 @@ export default function Home() {
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         {/* Over here this is returning JSX */}
         <h1>Our First React App</h1>
+        {/* below here we're going to use our component */}
+        <LearningList title="components" />
       </main>
 
     </div>
