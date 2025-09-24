@@ -14,3 +14,10 @@
 	`npm run dev`
 5. Change the title in the "pages/index.js" file in your "hello-next" project and see it change immediately on the page (this is hot module reload)
 	- this is essentially the beginning to see what we're going to be building and how we're going to do it.
+
+
+## Ensure you have react dev tools install
+
+Chrome: download and install https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=… react devtools
+
+Firefox: addons https://addons.mozilla.org/en-CA/firefox/addon/react-devtools/
