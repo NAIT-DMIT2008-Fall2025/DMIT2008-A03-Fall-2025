@@ -38,6 +38,17 @@ export default function Home() {
             <li>"children" is a special prop that allows you to wrap other components</li>
           </ul>
         </LearningList>
+
+        {/* I want you to write a component
+          1. be called FavouriteLangauges
+          2. takes an array of items like ["python", "java"]
+          3. renders the item in an ol
+          4. should have have LanguageItem component
+          5. add the className text-blue-600
+
+        */}
+
+
       </main>
 
     </div>
