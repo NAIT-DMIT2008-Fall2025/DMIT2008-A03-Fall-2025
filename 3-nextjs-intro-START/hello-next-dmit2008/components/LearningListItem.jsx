@@ -9,7 +9,8 @@ export default function LearningListItem({ text }) {
             {color: "blue"}
         }
     >
-        {item}
+        {/* the text is the prop that is passed */}
+        {text}
     </li>
 
 }

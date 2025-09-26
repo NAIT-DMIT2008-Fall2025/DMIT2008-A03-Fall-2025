@@ -1,3 +1,5 @@
+// let's import our LearningListItem
+
 // our new component
 // we have one prop here called title.
 // we add a second prop called children (which is special)
