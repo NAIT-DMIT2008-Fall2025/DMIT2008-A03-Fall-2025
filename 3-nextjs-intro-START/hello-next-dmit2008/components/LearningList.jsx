@@ -17,6 +17,8 @@ export default function LearningList(
             {/* render the itemsLearned a listitem
             using your of lists */}
             {itemsLearned.map((item, index)=> {
+                // our map is returning a modified version
+                // of the array and returning jsx.
                 return <li
                     key={index}
                     style={ // note this is used for styling sometimes
