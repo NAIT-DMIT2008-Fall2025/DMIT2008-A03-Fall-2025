@@ -45,7 +45,6 @@ export default function Home() {
           3. renders the item in an ol
           4. should have have LanguageItem component
           5. add the className text-blue-600
-
         */}
 
 
