@@ -27,7 +27,10 @@ export default function Home() {
         <LearningList
           title="components"
           itemsLearned={[
-            "props and how normally they're destructure"
+            "props and how normally they're destructured",
+            "children prop how it's special like dan.",
+            "lists and how we need to map and add a key that is unique",
+
           ]}
         >
           <ul>
