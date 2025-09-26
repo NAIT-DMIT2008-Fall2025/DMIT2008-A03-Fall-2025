@@ -1,4 +1,5 @@
 // let's import our LearningListItem
+import LearningListItem from "./LearningListItem"
 
 // our new component
 // we have one prop here called title.
@@ -21,12 +22,17 @@ export default function LearningList(
             {itemsLearned.map((item, index)=> {
                 // our map is returning a modified version
                 // of the array and returning jsx.
-                return <li
+                return <LearningListItem
                     key={index}
-                    style={ // note this is used for styling sometimes
-                        {color: "blue"}
-                    }
-                >{item}</li>
+                    text={item}
+                />
+                // the original
+                // return <li
+                //     key={index}
+                //     style={ // note this is used for styling sometimes
+                //         {color: "blue"}
+                //     }
+                // >{item}</li>
             })}
         </ul>
 
