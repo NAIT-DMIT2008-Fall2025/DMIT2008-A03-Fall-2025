@@ -14,10 +14,22 @@ export default function Home() {
         {/* Over here this is returning JSX */}
         <h1>Our First React App</h1>
         {/* below here we're going to use our component */}
-        <LearningList title="next.js" />
+        <LearningList
+          title="next.js"
+          itemsLearned={[
+            "setting it up in the terminal",
+            "the modules installed",
+            "create-next-app"
+          ]}
+        />
         {/* Looking below we can see
         that passing in children is optional. */}
-        <LearningList title="components">
+        <LearningList
+          title="components"
+          itemsLearned={[
+            "props and how normally they're destructure"
+          ]}
+        >
           <ul>
             <li>Components take props</li>
             <li>"children" is a special prop that allows you to wrap other components</li>
