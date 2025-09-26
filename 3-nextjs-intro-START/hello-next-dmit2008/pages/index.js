@@ -3,6 +3,8 @@
 import LearningList from "@/components/LearningList";
 // just a note here, there's no {} around LearningList
 // that is because it's a default export
+// import FavouriteLanguages
+import FavouriteLanguages from "@/components/languages/FavouriteLanguages";
 
 // we'll see this a bit later on but pages
 // in the app and pages router of next.js are
@@ -46,7 +48,15 @@ export default function Home() {
           4. should have have LanguageItem component
           5. add the className text-blue-600
         */}
-
+        <FavouriteLanguages
+          languages={[
+            "python",
+            "javascript",
+            "rust",
+            "ruby",
+            "c#"
+          ]}
+        />
 
       </main>
 
