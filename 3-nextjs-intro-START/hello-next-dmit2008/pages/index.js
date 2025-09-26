@@ -30,7 +30,7 @@ export default function Home() {
             "props and how normally they're destructured",
             "children prop how it's special like dan.",
             "lists and how we need to map and add a key that is unique",
-
+            "you can have components in components in components",
           ]}
         >
           <ul>
