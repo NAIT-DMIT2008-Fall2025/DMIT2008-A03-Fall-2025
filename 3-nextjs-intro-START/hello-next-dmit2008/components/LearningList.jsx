@@ -4,6 +4,10 @@
 export default function LearningList(
     {title, itemsLearned, children}
 ) {
+    // remember that comments in the javascript look like
+    // this with the two in slashes in front
+    // the comments in your JSX are going to look like
+    // {/* this */}
     return <div>
         <h2>things we've learned about: {title}</h2>
         {/* this is going to be a description that we're going add. */}
@@ -12,7 +16,14 @@ export default function LearningList(
         <ul>
             {/* render the itemsLearned a listitem
             using your of lists */}
-
+            {itemsLearned.map((item, index)=> {
+                return <li
+                    key={index}
+                    style={ // note this is used for styling sometimes
+                        {color: "blue"}
+                    }
+                >{item}</li>
+            })}
         </ul>
 
 
