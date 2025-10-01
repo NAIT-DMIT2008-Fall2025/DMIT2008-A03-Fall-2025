@@ -58,7 +58,9 @@ export default function Home() {
             */}
             <ItemList items={UI_LIBRARY_LIST} title={"Awesome libraries"} />
           </Col>
-          <Col>Column 2</Col>
+          <Col>
+            <ItemList items={AWESOME_FRAMEWORKS} title={"Some good JS Frameworks"} />
+          </Col>
         </Row>
       </main>
     </Container>
