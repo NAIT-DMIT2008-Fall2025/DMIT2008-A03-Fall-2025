@@ -9,6 +9,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+// let's import our component
+import ItemList from '@/components/ItemList';
 
 export default function Home() {
   const UI_LIBRARY_LIST = [
@@ -38,19 +40,18 @@ export default function Home() {
     },
   ]
 
-
   return (
     <Container>
       <main>
         <h1>React bootstrap example</h1>
         <Row>
-          <Col>Column 1
+          <Col>
             {/* I want you folks to use list groups in a component
               named ItemList, and I want you to create this in
               a folder called "components"
-              <ItemList items={UI_LIBRARY} title={"Awesome libraries"} />
+              <ItemList items={UI_LIBRARY_LIST} title={"Awesome libraries"} />
             */}
-
+            <ItemList items={UI_LIBRARY_LIST} title={"Awesome libraries"} />
           </Col>
           <Col>Column 2</Col>
         </Row>
