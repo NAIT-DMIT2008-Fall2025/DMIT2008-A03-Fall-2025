@@ -40,6 +40,11 @@ export default function Home() {
     },
   ]
 
+  const AWESOME_FRAMEWORKS = [
+    {name:'react', url: "https://react.dev/"},
+    {name:'next.js', url: "https://nextjs.org/"},
+  ]
+
   return (
     <Container>
       <main>

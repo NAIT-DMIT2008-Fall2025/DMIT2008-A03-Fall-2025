@@ -20,12 +20,11 @@ export default function ItemList({items, title}) {
 
                 option 2 (implies the return)
                 items.map((item, index) => (//...jsx here));
-
             */}
 
             {items.map((item, index) => {
                 // item is an object
-                console.log(item)
+                // console.log(item)
                 // we're going to return a ListGroup.Item for each
                 return <ListGroup.Item
                     key={index}
