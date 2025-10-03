@@ -53,6 +53,7 @@ export default function Home() {
               <Alert
                 icon={<AirlineSeatFlatIcon />}
                 severity='warning'
+                sx={{marginBottom: '10px'}}
               >
                 Dans Voice might cause sleepiness.
               </Alert>
@@ -60,6 +61,26 @@ export default function Home() {
                 Remove sleepiness
               </Button>
             </div>}
+          />
+        </Grid>
+        <Grid size={6}>
+          <CustomCard
+            title="Reuse"
+            body={
+              <Alert severity="success">
+                We learned something!
+              </Alert>
+            }
+            actions={
+              <>
+                <Button variant="contained">
+                  Learn Again
+                </Button>
+                <Button variant="outlined">
+                  Cancel
+                </Button>
+              </>
+            }
           />
         </Grid>
       </Grid>
