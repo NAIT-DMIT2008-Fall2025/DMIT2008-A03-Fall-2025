@@ -56,17 +56,23 @@ export default function Home() {
               a folder called "components"
               <ItemList items={UI_LIBRARY_LIST} title={"Awesome libraries"} />
             */}
-            <ItemList items={UI_LIBRARY_LIST} title={"Awesome libraries"} />
+            <ItemList
+              items={UI_LIBRARY_LIST}
+              title={"Awesome libraries"}
+            />
             {/* An easy way to think about jsx
             is that it's calling your component like this
             ItemList({
               items: UI_LIBRARY_LIST,
-              title="Awesome libraries"
+              title: "Awesome libraries"
             })
             */}
           </Col>
           <Col>
-            <ItemList items={AWESOME_FRAMEWORKS} title={"Some good JS Frameworks"} />
+            <ItemList
+              items={AWESOME_FRAMEWORKS}
+              title={"Some good JS Frameworks"}
+            />
           </Col>
         </Row>
       </main>
