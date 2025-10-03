@@ -15,9 +15,11 @@ export default function Home() {
 
       <Grid container spacing={2}>
         <Grid size={12}>
-          {/* we're going to put the title here */}
+          {/* we're going to put the title here
+          note component is the html element to be used here
+          and variant is how it will look in the docs */}
           <Typography
-            variant="h1"
+            variant="h2"
             component="h1"
             gutterBottom
           >
