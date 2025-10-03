@@ -31,8 +31,17 @@ export default function Home() {
         </Grid>
         {/* Let's make a few items in the grid */}
         <Grid size={6}>
+          {/* in react you can actually pass in
+            jsx as a prop to another component.
+          */}
           <CustomCard
             title="A few components to use"
+            body={<div>
+              {/* we're passing in jsx
+                I want you to add an alert and a button
+                button here from mui
+              */}
+            </div>}
           />
         </Grid>
       </Grid>
