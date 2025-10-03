@@ -8,6 +8,9 @@ import Grid from '@mui/material/Grid';
 // docs: https://mui.com/material-ui/react-typography/
 import Typography from '@mui/material/Typography';
 
+// Let's import our Card
+import CustomCard from '@/components/CustomCard';
+
 // gut the index page
 export default function Home() {
   return (
@@ -25,6 +28,12 @@ export default function Home() {
           >
             Intro to MUI
           </Typography>
+        </Grid>
+        {/* Let's make a few items in the grid */}
+        <Grid size={6}>
+          <CustomCard
+            title="A few components to use"
+          />
         </Grid>
       </Grid>
     </Container>

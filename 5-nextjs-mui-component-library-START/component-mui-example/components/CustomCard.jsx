@@ -9,25 +9,29 @@
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
+// we need to import Typography
+import Typography from '@mui/material/Typography';
 
 
-export default function CustomCard({title, body, actions}) {
-    // we need to return a card
-    return <Card>
-        <CardContent>
-            {/* we're going to add a title
-            Note the component below is using the sx prop which is a styling
-            prop for MUI, this is custom and takes an object
-            */}
-            <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 14 }}>
-                {title}
-            </Typography>
-            {/* we're going to actually pass jsx into our component into the prop body*/}
-            {body}
-        </CardContent>
-        <CardActions>
-            {/* we're doing the same as the above. */}
-            {actions}
-        </CardActions>
-    </Card>
+export default function CustomCard(
+    {title, body, actions}
+) {
+  // we need to return a card
+  return <Card>
+    <CardContent>
+      {/* we're going to add a title
+      Note the component below is using the sx prop which is a styling
+      prop for MUI, this is custom and takes an object
+      */}
+      <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 14 }}>
+        {title}
+      </Typography>
+      {/* we're going to actually pass jsx into our component into the prop body*/}
+      {body}
+    </CardContent>
+    <CardActions>
+      {/* we're doing the same as the above. */}
+      {actions}
+    </CardActions>
+  </Card>
 }
