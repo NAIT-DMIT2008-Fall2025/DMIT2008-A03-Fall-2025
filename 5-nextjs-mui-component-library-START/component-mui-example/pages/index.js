@@ -1,5 +1,8 @@
 
 // I want you to read the docs and see if you can add
+// add the alert
+import Alert from '@mui/material/Alert';
+
 // a container: refer to docs here https://mui.com/material-ui/react-container/
 import Container from '@mui/material/Container';
 // a grid: https://mui.com/material-ui/react-grid/
@@ -41,6 +44,9 @@ export default function Home() {
                 I want you to add an alert and a button
                 button here from mui
               */}
+              <Alert severity='warning'>
+                Dans Voice might cause sleepiness.
+              </Alert>
             </div>}
           />
         </Grid>
