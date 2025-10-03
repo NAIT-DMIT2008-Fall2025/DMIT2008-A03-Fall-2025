@@ -11,6 +11,12 @@ import Grid from '@mui/material/Grid';
 // docs: https://mui.com/material-ui/react-typography/
 import Typography from '@mui/material/Typography';
 
+
+import Button from '@mui/material/Button';
+
+// icon used
+import AirlineSeatFlatIcon from '@mui/icons-material/AirlineSeatFlat';
+
 // Let's import our Card
 import CustomCard from '@/components/CustomCard';
 
@@ -44,10 +50,15 @@ export default function Home() {
                 I want you to add an alert and a button
                 button here from mui
               */}
-              <Alert severity='warning'>
+              <Alert
+                icon={<AirlineSeatFlatIcon />}
+                severity='warning'
+              >
                 Dans Voice might cause sleepiness.
               </Alert>
-
+              <Button variant="contained">
+                Remove sleepiness
+              </Button>
             </div>}
           />
         </Grid>
