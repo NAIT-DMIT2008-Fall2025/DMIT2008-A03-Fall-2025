@@ -16,10 +16,9 @@ export default function Navbar({ title }) {
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           App bar: {title}
-
         </Typography>
+        <Button color="inherit">Go to page</Button>
       </Toolbar>
     </AppBar>
-
   </Box>
 }
