@@ -31,10 +31,18 @@ export default function Home() {
       <main className={styles.container}>
         <Container maxWidth="md">
           <Box sx={{ my: 4 }}>
-            <Typography variant="h2" component="h2">
+            <Typography
+              variant="h2"
+              component="h2"
+              color="primary"
+            >
               MUI Example
             </Typography>
-            <Typography variant="p" component="p">
+            <Typography
+              variant="p"
+              component="p"
+              color="secondary"
+            >
               You can perhaps see why this is a popular package.
             </Typography>
           </Box>

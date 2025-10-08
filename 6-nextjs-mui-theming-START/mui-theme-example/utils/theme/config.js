@@ -6,7 +6,7 @@ const themeOptions = {
   palette: {
     mode: 'light',
     text: {
-      primary: '#18069c',
+      primary: '#250aedff',
       secondary: 'rgba(201,22,174,0.82)',
     },
     primary: {
