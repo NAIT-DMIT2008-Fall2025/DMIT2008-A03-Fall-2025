@@ -1,5 +1,4 @@
 import { createTheme } from '@mui/material/styles';
-import { create } from '@mui/material/styles/createTransitions';
 
 // create the theme options
 //
