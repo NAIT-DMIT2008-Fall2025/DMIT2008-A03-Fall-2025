@@ -7,6 +7,8 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
+import Navbar from '../components/Navbar';
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -25,6 +27,8 @@ export default function Home() {
         />
       </Head>
 
+      {/* Add a navbar */}
+      <Navbar title="" />
       <main>
         <Container maxWidth="md">
 
