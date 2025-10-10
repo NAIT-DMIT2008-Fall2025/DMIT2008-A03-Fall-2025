@@ -57,8 +57,8 @@ export default function Home() {
             label="What are you going to do?"
             variant="outlined"
             fullWidth
-
-
+            onChange={textFieldHandler}
+            value={todoText}
           />
           {/*
             1. above we're going to add an event listener
