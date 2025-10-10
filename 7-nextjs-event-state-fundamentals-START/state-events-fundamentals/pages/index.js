@@ -6,6 +6,9 @@ i want a title with Typography
 that will say "Our TodoList"
 
 */
+// we are going import useState from react
+import { useState } from 'react'
+
 import Container from '@mui/material/Container';
 // the file in material will be the name of the component
 import Grid from '@mui/material/Grid';
@@ -16,6 +19,11 @@ import Button from '@mui/material/Button';
 
 
 export default function Home() {
+  // we're going to create a stateful
+  // variable that will be in synced
+  // up with our text field
+  const [todoText, setTodoText] = useState('')
+
   // is we're going to add an event
   // listener on the click of the
   // button.
