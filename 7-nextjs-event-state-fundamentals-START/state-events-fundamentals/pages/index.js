@@ -24,6 +24,15 @@ export default function Home() {
   // up with our text field
   const [todoText, setTodoText] = useState('')
 
+  // we're going to add an event handler
+  // it's going to set the state of the todoText
+  const textFieldHandler = (event) => {
+    // for your purposes the event object
+    // is essentially the same as plain old js.
+    // we're going to set todoText
+    setTodoText(event.target.value)
+  }
+
   // is we're going to add an event
   // listener on the click of the
   // button.
@@ -48,8 +57,15 @@ export default function Home() {
             label="What are you going to do?"
             variant="outlined"
             fullWidth
+
+
           />
-          {/* https://mui.com/material-ui/react-text-field/#full-width */}
+          {/*
+            1. above we're going to add an event listener
+            that listen change
+            2. set the value of the textfield to todoText
+
+          https://mui.com/material-ui/react-text-field/#full-width */}
         </Grid>
         <Grid size={10}>
           {/* my button */}
