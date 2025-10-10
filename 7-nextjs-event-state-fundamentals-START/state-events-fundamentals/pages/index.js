@@ -16,6 +16,14 @@ import Button from '@mui/material/Button';
 
 
 export default function Home() {
+  // is we're going to add an event
+  // listener on the click of the
+  // button.
+
+  const addTodoToList = () => {
+    console.log('clicked')
+  }
+
   return (
     <Container>
       <Grid container spacing={2}>
@@ -37,7 +45,10 @@ export default function Home() {
         </Grid>
         <Grid size={10}>
           {/* my button */}
-          <Button variant="contained">
+          <Button
+            variant="contained"
+            onClick={addTodoToList}
+          >
             Add Todo
           </Button>
         </Grid>
