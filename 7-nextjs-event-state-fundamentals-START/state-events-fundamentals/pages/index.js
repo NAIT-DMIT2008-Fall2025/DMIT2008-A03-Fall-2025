@@ -22,16 +22,21 @@ export default function Home() {
             Our TodoList
           </Typography>
         </Grid>
-        <form>
-          <Grid size={10}>
-            {/* my text field */}
 
-          </Grid>
-          <Grid size={10}>
-            {/* my button */}
+        <Grid size={10}>
+          {/* my text field */}
+          <TextField
+            id="todo-input"
+            label="What are you going to do?"
+            variant="outlined"
+            fullWidth
+          />
+          {/*  */}
+        </Grid>
+        <Grid size={10}>
+          {/* my button */}
 
-          </Grid>
-        </form>
+        </Grid>
       </Grid>
     </Container>
   );
