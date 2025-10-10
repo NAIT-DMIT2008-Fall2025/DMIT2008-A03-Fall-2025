@@ -12,6 +12,8 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 // note: add roboto it'll be a good idea.
 import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+
 
 export default function Home() {
   return (
@@ -31,11 +33,13 @@ export default function Home() {
             variant="outlined"
             fullWidth
           />
-          {/*  */}
+          {/* https://mui.com/material-ui/react-text-field/#full-width */}
         </Grid>
         <Grid size={10}>
           {/* my button */}
-
+          <Button variant="contained">
+            Add Todo
+          </Button>
         </Grid>
       </Grid>
     </Container>
