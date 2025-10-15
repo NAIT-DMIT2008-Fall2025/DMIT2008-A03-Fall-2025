@@ -66,7 +66,8 @@ export default function Home() {
     // how can i change the value of todolist todoListItems
     // i'm going to call setTodoListItems
     setTodoListItems(tempTodos)
-
+    // I can also reset the input here with setTodoText
+    setTodoText('')
   }
 
   return (
