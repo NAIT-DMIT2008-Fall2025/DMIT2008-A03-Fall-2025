@@ -96,9 +96,16 @@ export default function Home() {
       >
         <Grid container spacing={2}>
           <Grid size={12}>
-            <Typography variant={'h2'}>
-              Our TodoList
-            </Typography>
+            {/* below an example of using ternaries */}
+            {todoListItems.length > 0 ?
+              <Typography variant={'h2'}>
+                {todoListItems.length} thing(s) to do.
+              </Typography>
+              :
+              <Typography variant={'h2'}>
+                Nothing Todo
+              </Typography>
+            }
           </Grid>
 
           <Grid size={10}>
@@ -121,6 +128,7 @@ export default function Home() {
           <Grid size={10}>
             {/* my button
             we can convert this.
+            we changed this to submit
             */}
             <Button
               variant="contained"
@@ -136,6 +144,17 @@ export default function Home() {
         {/* Let's add this list */}
         <Grid size={12}>
           <List>
+            {/* we can handle the case with no items
+              below is like if (todoListItems.length === 0) {...show component ...}
+            */}
+            {todoListItems.length === 0 &&
+              <ListItem>
+                <ListItemText
+                  primary="no todos, feel free to add one"
+                />
+              </ListItem>
+            }
+
             {/* we're going to change RANDOM_TODOS to the
             stateful value of todoListItems
             */}
