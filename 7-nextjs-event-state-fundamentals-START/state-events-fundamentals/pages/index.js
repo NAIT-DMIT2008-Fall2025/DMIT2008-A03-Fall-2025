@@ -53,10 +53,11 @@ export default function Home() {
   }
 
   // is we're going to add an event
-  // listener on the click of the
-  // button.
+  // add this to the form
+  const addTodoToList = (event) => {
+    // just like javascript I'm going to preventthedefault action
+    event.preventDefault()
 
-  const addTodoToList = () => {
     console.log('clicked')
     // we're going create a new state and also loop over the items.
     // we're going to add to the existing items by setting a new list.
@@ -90,45 +91,47 @@ export default function Home() {
 
   return (
     <Container>
+      <form
+        onSubmit={addTodoToList}
+      >
+        <Grid container spacing={2}>
+          <Grid size={12}>
+            <Typography variant={'h2'}>
+              Our TodoList
+            </Typography>
+          </Grid>
 
-      <Grid container spacing={2}>
-        <Grid size={12}>
-          <Typography variant={'h2'}>
-            Our TodoList
-          </Typography>
+          <Grid size={10}>
+            {/* my text field */}
+            <TextField
+              id="todo-input"
+              label="What are you going to do?"
+              variant="outlined"
+              fullWidth
+              onChange={textFieldHandler}
+              value={todoText}
+            />
+            {/*
+              1. above we're going to add an event listener
+              that listen change
+              2. set the value of the textfield to todoText
+
+            https://mui.com/material-ui/react-text-field/#full-width */}
+          </Grid>
+          <Grid size={10}>
+            {/* my button
+            we can convert this.
+            */}
+            <Button
+              variant="contained"
+              type="submit"
+            >
+              Add Todo
+            </Button>
+          </Grid>
         </Grid>
-
-        <Grid size={10}>
-          {/* my text field */}
-          <TextField
-            id="todo-input"
-            label="What are you going to do?"
-            variant="outlined"
-            fullWidth
-            onChange={textFieldHandler}
-            value={todoText}
-          />
-          {/*
-            1. above we're going to add an event listener
-            that listen change
-            2. set the value of the textfield to todoText
-
-          https://mui.com/material-ui/react-text-field/#full-width */}
-        </Grid>
-        <Grid size={10}>
-          {/* my button
-          we can convert this.
-          */}
-          <Button
-            variant="contained"
-            onClick={addTodoToList}
-          >
-            Add Todo
-          </Button>
-        </Grid>
-
-      </Grid>
-
+      </form>
+      {/* list below. */}
       <Grid container spacing={2}>
         {/* Let's add this list */}
         <Grid size={12}>
