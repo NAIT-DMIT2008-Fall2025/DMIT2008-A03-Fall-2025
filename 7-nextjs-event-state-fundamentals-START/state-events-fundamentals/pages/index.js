@@ -21,6 +21,9 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 
+// for the remove button
+import IconButton from '@mui/material/IconButton';
+
 const RANDOM_TODOS = [
   'create the list in mui',
   'get the text and update state.',
@@ -111,6 +114,10 @@ export default function Home() {
           stateful value of todoListItems
            */}
           {todoListItems.map((todo, index) => {
+            // inside of this function we access to
+            // todo and index.
+            // this will be useful when we create the delete
+
             return <ListItem key={index}>
               {/* we're going to add a delete button
               to remove the stateful value. */}
