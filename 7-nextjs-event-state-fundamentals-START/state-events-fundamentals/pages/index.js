@@ -56,6 +56,17 @@ export default function Home() {
   const addTodoToList = () => {
     console.log('clicked')
     // we're going create a new state and also loop over the items.
+    // we're going to add to the existing items by setting a new list.
+    const tempTodos = [
+      ...todoListItems, // only copies the items for the array
+      todoText
+    ]
+    console.log(tempTodos)
+    // now that I have that list above
+    // how can i change the value of todolist todoListItems
+    // i'm going to call setTodoListItems
+    setTodoListItems(tempTodos)
+
   }
 
   return (
