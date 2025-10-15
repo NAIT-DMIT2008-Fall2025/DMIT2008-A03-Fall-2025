@@ -16,13 +16,23 @@ import Typography from '@mui/material/Typography';
 // note: add roboto it'll be a good idea.
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-
+// let's get the list item pieces
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
 
 export default function Home() {
   // we're going to create a stateful
   // variable that will be in synced
   // up with our text field
   const [todoText, setTodoText] = useState('')
+
+  const RANDOM_TODOS = [
+    'create the list in mui',
+    'get the text and update state.',
+    'make sure we understand lists'
+  ]
+
 
   // we're going to add an event handler
   // it's going to set the state of the todoText
@@ -77,6 +87,17 @@ export default function Home() {
             Add Todo
           </Button>
         </Grid>
+        {/* Let's add this list */}
+        <List>
+          {RANDOM_TODOS.map((todo, index) => {
+            return <ListItem key={index}>
+              <ListItemText
+                primary={todo}
+                secondary={`item at index ${index}`}
+              />
+            </ListItem>
+          })}
+        </List>
       </Grid>
     </Container>
   );
