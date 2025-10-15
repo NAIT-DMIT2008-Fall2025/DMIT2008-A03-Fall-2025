@@ -39,6 +39,7 @@ export default function Home() {
 
   const addTodoToList = () => {
     console.log('clicked')
+    // we're going create a new state and also loop over the items.
   }
 
   return (
