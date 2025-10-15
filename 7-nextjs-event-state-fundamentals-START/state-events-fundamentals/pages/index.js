@@ -21,17 +21,23 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 
+const RANDOM_TODOS = [
+  'create the list in mui',
+  'get the text and update state.',
+  'make sure we understand lists'
+]
+
 export default function Home() {
   // we're going to create a stateful
   // variable that will be in synced
   // up with our text field
   const [todoText, setTodoText] = useState('')
-
-  const RANDOM_TODOS = [
-    'create the list in mui',
-    'get the text and update state.',
-    'make sure we understand lists'
-  ]
+  // above we have state for the input
+  // let's add some state here for the list
+  // remember that on the right side you can put the data type into
+  // the state as the original value.
+  const [todoListItems, setTodoListItems] = useState(RANDOM_TODOS)
+  // the original state here is the todos!
 
 
   // we're going to add an event handler
@@ -89,7 +95,10 @@ export default function Home() {
         </Grid>
         {/* Let's add this list */}
         <List>
-          {RANDOM_TODOS.map((todo, index) => {
+          {/* we're going to change RANDOM_TODOS to the
+          stateful value of todoListItems
+           */}
+          {todoListItems.map((todo, index) => {
             return <ListItem key={index}>
               <ListItemText
                 primary={todo}
