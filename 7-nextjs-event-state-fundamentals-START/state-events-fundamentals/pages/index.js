@@ -90,6 +90,7 @@ export default function Home() {
 
   return (
     <Container>
+
       <Grid container spacing={2}>
         <Grid size={12}>
           <Typography variant={'h2'}>
@@ -115,7 +116,9 @@ export default function Home() {
           https://mui.com/material-ui/react-text-field/#full-width */}
         </Grid>
         <Grid size={10}>
-          {/* my button */}
+          {/* my button
+          we can convert this.
+          */}
           <Button
             variant="contained"
             onClick={addTodoToList}
@@ -123,6 +126,10 @@ export default function Home() {
             Add Todo
           </Button>
         </Grid>
+
+      </Grid>
+
+      <Grid container spacing={2}>
         {/* Let's add this list */}
         <Grid size={12}>
           <List>
