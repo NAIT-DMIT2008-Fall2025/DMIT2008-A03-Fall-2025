@@ -109,32 +109,34 @@ export default function Home() {
           </Button>
         </Grid>
         {/* Let's add this list */}
-        <List>
-          {/* we're going to change RANDOM_TODOS to the
-          stateful value of todoListItems
-           */}
-          {todoListItems.map((todo, index) => {
-            // inside of this function we access to
-            // todo and index.
-            // this will be useful when we create the delete
+        <Grid size={12}>
+          <List>
+            {/* we're going to change RANDOM_TODOS to the
+            stateful value of todoListItems
+            */}
+            {todoListItems.map((todo, index) => {
+              // inside of this function we access to
+              // todo and index.
+              // this will be useful when we create the delete
 
-            return <ListItem
-              key={index}
-              secondaryAction={
-                <IconButton edge="end">
-                  <CloseIcon />
-                </IconButton>
-              }
-            >
-              {/* we're going to add a delete button
-              to remove the stateful value. */}
-              <ListItemText
-                primary={todo}
-                secondary={`item at index ${index}`}
-              />
-            </ListItem>
-          })}
-        </List>
+              return <ListItem
+                key={index}
+                secondaryAction={
+                  <IconButton edge="end">
+                    <CloseIcon />
+                  </IconButton>
+                }
+              >
+                {/* we're going to add a delete button
+                to remove the stateful value. */}
+                <ListItemText
+                  primary={todo}
+                  secondary={`item at index ${index}`}
+                />
+              </ListItem>
+            })}
+          </List>
+        </Grid>
       </Grid>
     </Container>
   );
