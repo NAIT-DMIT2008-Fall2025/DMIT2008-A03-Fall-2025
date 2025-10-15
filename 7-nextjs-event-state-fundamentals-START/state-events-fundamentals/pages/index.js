@@ -73,6 +73,21 @@ export default function Home() {
     setTodoText('')
   }
 
+  // remove todo
+  // note here that we're passing in the index.
+  const removeTodo = (index) => {
+    console.log('removeTodo '+ index);
+    // use my knowledge of filter or splice to remove
+    // the item at the index, let's create a copy
+    let tempTodos = [...todoListItems]
+    // this is going to remove the item in the array
+    tempTodos.splice(index, 1);
+    // reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+    // console.log(tempTodos)
+    // we set the state
+    setTodoListItems(tempTodos)
+  }
+
   return (
     <Container>
       <Grid container spacing={2}>
@@ -118,12 +133,21 @@ export default function Home() {
               // inside of this function we access to
               // todo and index.
               // this will be useful when we create the delete
-
+              // we're going to create
+              // function that will call our delete
               return <ListItem
                 key={index}
                 secondaryAction={
-                  <IconButton edge="end">
-                    <CloseIcon />
+                  <IconButton
+                    edge="end"
+                    onClick={()=> {
+                      // we're using index from above
+                      // to remove the item.
+                      removeTodo(index)
+                    }}
+                  >
+
+                     <CloseIcon />
                   </IconButton>
                 }
               >
