@@ -20,9 +20,9 @@ import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-
 // for the remove button
 import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 
 const RANDOM_TODOS = [
   'create the list in mui',
@@ -118,7 +118,14 @@ export default function Home() {
             // todo and index.
             // this will be useful when we create the delete
 
-            return <ListItem key={index}>
+            return <ListItem
+              key={index}
+              secondaryAction={
+                <IconButton edge="end">
+                  <CloseIcon />
+                </IconButton>
+              }
+            >
               {/* we're going to add a delete button
               to remove the stateful value. */}
               <ListItemText
