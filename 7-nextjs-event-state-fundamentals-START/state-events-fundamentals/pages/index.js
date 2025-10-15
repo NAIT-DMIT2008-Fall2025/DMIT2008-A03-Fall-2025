@@ -112,6 +112,8 @@ export default function Home() {
            */}
           {todoListItems.map((todo, index) => {
             return <ListItem key={index}>
+              {/* we're going to add a delete button
+              to remove the stateful value. */}
               <ListItemText
                 primary={todo}
                 secondary={`item at index ${index}`}
