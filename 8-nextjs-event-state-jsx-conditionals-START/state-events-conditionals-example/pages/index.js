@@ -31,6 +31,8 @@ export default function Home() {
   // will be the default value.
   const [movies, setMovies] = useState(MOVIE_LIST)
 
+  const [errorMessage, setErrorMessage] = useState('')
+
   // on the form I want you folks
   // I want you folks to create a form event handler
   // that it's going to validate the inputs
@@ -48,11 +50,10 @@ export default function Home() {
     // return true or false
     // I'm going to check if year is a number
     // check for isNumber
-    console.log(year)
-    console.log(!isNaN(year))
-
     if (!isNaN(year)) {
+      setErrorMessage(`"${year}" is not a valid year, need to be number`)
 
+      return false
     }
 
 
@@ -116,6 +117,11 @@ export default function Home() {
               </Grid>
               <Grid item xs={10}>
                 {/* Add the error message here */}
+                {errorMessage !== '' &&
+                  <Alert severity='error'>
+                    {errorMessage}
+                  </Alert>
+                }
               </Grid>
             </Grid>
           </form>
