@@ -31,8 +31,6 @@ export default function Home() {
   // will be the default value.
   const [movies, setMovies] = useState(MOVIE_LIST)
 
-
-
   // on the form I want you folks
   // I want you folks to create a form event handler
   // that it's going to validate the inputs
@@ -117,7 +115,7 @@ export default function Home() {
                 >Filter</Button>
               </Grid>
               <Grid item xs={10}>
-                {/* Add the error message here*/}
+                {/* Add the error message here */}
               </Grid>
             </Grid>
           </form>
