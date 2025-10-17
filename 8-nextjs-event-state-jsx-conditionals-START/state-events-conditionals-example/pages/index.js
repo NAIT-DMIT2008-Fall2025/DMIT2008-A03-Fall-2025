@@ -50,15 +50,27 @@ export default function Home() {
     // return true or false
     // I'm going to check if year is a number
     // check for isNumber
-    console.log(year)
-    console.log(isNaN(year))
+    // if it's empty it's valid.
+    if (year.trim() === '') {
+      setErrorMessage('')
+      return true
+    }
+
+    // we're only going to validate if there is
+    // a number
     if (isNaN(year)) {
       setErrorMessage(`"${year}" is not a valid year, need to be number`)
-
       return false
     }
 
+    if (year.length !== 4) {
+      setErrorMessage(`"${year}" needs to be when we're alive.`)
+      return false
+    }
 
+    // if it return true
+    // we need to clear error message
+    setErrorMessage('')
     return true
   }
 
