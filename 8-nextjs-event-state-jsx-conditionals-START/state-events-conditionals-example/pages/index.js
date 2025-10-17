@@ -72,9 +72,19 @@ export default function Home() {
         // strings in js a character arrays
         return lowerMovieName.includes(lowerSearch)
       })
-
-
     }
+
+    // three mins do the year.
+    if (year !== "") {
+      filteredMovieList = filteredMovieList.filter((movie)=> {
+        // I'm going to check to see if it's the same year
+        const yearAsNumber = parseInt(year)
+        // are the years the same.
+        return yearAsNumber === movie.year
+      })
+    }
+
+
     // set the movieList to my new filtered movieList
     setMovies(filteredMovieList)
 
