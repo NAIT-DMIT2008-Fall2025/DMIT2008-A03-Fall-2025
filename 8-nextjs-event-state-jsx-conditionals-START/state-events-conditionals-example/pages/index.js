@@ -1,4 +1,5 @@
-import { MOVIE_LIST } from '../utils/movies'
+// import state from react
+import { useState } from 'react'
 
 import Head from 'next/head'
 import Image from 'next/image'
@@ -15,7 +16,21 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 
+import { MOVIE_LIST } from '../utils/movies'
+
 export default function Home() {
+  // create stateful variables for all of the text fields
+  const [search, setSearch] = useState('')
+  const [year, setYear] = useState('')
+
+  // I want you make thse variables for the text fields "controlled"
+  // controlled means the input is updating the state for those values.
+  // and value is equal to the stateful value.
+
+  // I also want you create stateful variables for the MOVIE_LIST (where the movie list)
+  // will be the default value.
+
+
   return (
     <div>
       <Head>
@@ -36,12 +51,18 @@ export default function Home() {
           <form style={{width: '100%'}}>
             <Grid container spacing={2}>
               <Grid item xs={6}>
+                {/* normally for controlling inputs
+                you just directly put the in the
+                onChange */}
                 <TextField
                   id="search-field"
                   label="search..."
                   variant="standard"
                   sx={{width: '100%'}}
-                  
+                  onChange={(event)=> {
+                    setSearch(event.target.value)
+                  }}
+                  value={search}
                 />
               </Grid>
               <Grid item xs={4}>
@@ -50,7 +71,10 @@ export default function Home() {
                   label="year"
                   variant="standard"
                   sx={{width: '100%'}}
-                 
+                  onChange={(event)=> {
+                    setYear(event.target.year)
+                  }}
+                  value={year}
                 />
               </Grid>
               <Grid item xs={2}>
