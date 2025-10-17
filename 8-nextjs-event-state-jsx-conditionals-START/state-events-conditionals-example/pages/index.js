@@ -31,6 +31,8 @@ export default function Home() {
   // will be the default value.
   const [movies, setMovies] = useState(MOVIE_LIST)
 
+
+
   // on the form I want you folks
   // I want you folks to create a form event handler
   // that it's going to validate the inputs
@@ -41,10 +43,23 @@ export default function Home() {
   // message.
   const formHandler = (event) => {
     event.preventDefault()
-
+    const isValid = validate()
   }
 
+  const validate = () => {
+    // return true or false
+    // I'm going to check if year is a number
+    // check for isNumber
+    console.log(year)
+    console.log(!isNaN(year))
 
+    if (!isNaN(year)) {
+
+    }
+
+
+    return true
+  }
 
   return (
     <div>
