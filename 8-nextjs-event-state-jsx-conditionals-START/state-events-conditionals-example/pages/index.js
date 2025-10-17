@@ -43,7 +43,8 @@ export default function Home() {
   // message.
   const formHandler = (event) => {
     event.preventDefault()
-    const isValid = validate()
+    // const isValid = validate()
+    filterMovies()
   }
 
   // I want you to create function
@@ -52,6 +53,33 @@ export default function Home() {
   // and will filter both if entered.
   // I want you to update the state for this with setMovies
   // hint I want you folks to use filter
+  const filterMovies = () => {
+    // make a copy of the array
+    let filteredMovieList = [...MOVIE_LIST]
+    // I'm going to check to see if each year and search
+    // is not empty
+    console.log([...MOVIE_LIST])
+    if (search.trim() !== "") {
+      // inside of the if I'm going to use knowledge of filter
+      // we're going to reassign to the result of hte filter
+      filteredMovieList = filteredMovieList.filter((movie)=> {
+        // remember true to keep it, false to remove it from the list.
+        // this is just a special loop
+        let lowerMovieName = movie.name.toLowerCase()
+        let lowerSearch = search.toLowerCase()
+        // if anything weird is happening
+        // console log the variables here.
+        // strings in js a character arrays
+        return lowerMovieName.includes(lowerSearch)
+      })
+
+
+    }
+    // set the movieList to my new filtered movieList
+    setMovies(filteredMovieList)
+
+  }
+
 
 
   const validate = () => {
