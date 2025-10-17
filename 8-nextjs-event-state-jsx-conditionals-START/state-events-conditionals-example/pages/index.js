@@ -39,6 +39,11 @@ export default function Home() {
   // If it's invalid I want you folks to show
   // an Alert in the JSX with an appropriate error
   // message.
+  const formHandler = (event) => {
+    event.preventDefault()
+
+  }
+
 
 
   return (
@@ -58,7 +63,10 @@ export default function Home() {
           <Typography variant="h2" component="h2" style={{textAlign: "center"}}>
             Movies
           </Typography>
-          <form style={{width: '100%'}}>
+          <form
+            onSubmit={formHandler}
+            style={{width: '100%'}}
+          >
             <Grid container spacing={2}>
               <Grid item xs={6}>
                 {/* normally for controlling inputs
