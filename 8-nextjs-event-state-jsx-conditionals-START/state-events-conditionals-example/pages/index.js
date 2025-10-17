@@ -50,7 +50,9 @@ export default function Home() {
     // return true or false
     // I'm going to check if year is a number
     // check for isNumber
-    if (!isNaN(year)) {
+    console.log(year)
+    console.log(isNaN(year))
+    if (isNaN(year)) {
       setErrorMessage(`"${year}" is not a valid year, need to be number`)
 
       return false
