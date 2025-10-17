@@ -43,8 +43,12 @@ export default function Home() {
   // message.
   const formHandler = (event) => {
     event.preventDefault()
-    // const isValid = validate()
-    filterMovies()
+    const isValid = validate()
+    if (isValid) {
+      filterMovies()
+    } else {
+      setMovies([])
+    }
   }
 
   // I want you to create function
@@ -75,7 +79,7 @@ export default function Home() {
     }
 
     // three mins do the year.
-    if (year !== "") {
+    if (year.trim() !== "") {
       filteredMovieList = filteredMovieList.filter((movie)=> {
         // I'm going to check to see if it's the same year
         const yearAsNumber = parseInt(year)
@@ -84,10 +88,8 @@ export default function Home() {
       })
     }
 
-
     // set the movieList to my new filtered movieList
     setMovies(filteredMovieList)
-
   }
 
 
