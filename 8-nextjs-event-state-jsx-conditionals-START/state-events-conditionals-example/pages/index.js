@@ -46,6 +46,14 @@ export default function Home() {
     const isValid = validate()
   }
 
+  // I want you to create function
+  // that will filter based on search only if it has value
+  // that will filter based on year only if it has value
+  // and will filter both if entered.
+  // I want you to update the state for this with setMovies
+  // hint I want you folks to use filter
+
+
   const validate = () => {
     // return true or false
     // I'm going to check if year is a number
