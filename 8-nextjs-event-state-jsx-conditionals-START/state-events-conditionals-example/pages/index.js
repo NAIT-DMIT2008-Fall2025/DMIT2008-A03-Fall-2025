@@ -19,17 +19,17 @@ import ListItemText from '@mui/material/ListItemText';
 import { MOVIE_LIST } from '../utils/movies'
 
 export default function Home() {
-  // create stateful variables for all of the text fields
-  const [search, setSearch] = useState('')
-  const [year, setYear] = useState('')
 
   // I want you make thse variables for the text fields "controlled"
   // controlled means the input is updating the state for those values.
   // and value is equal to the stateful value.
+  // create stateful variables for all of the text fields
+  const [search, setSearch] = useState('')
+  const [year, setYear] = useState('')
 
   // I also want you create stateful variables for the MOVIE_LIST (where the movie list)
   // will be the default value.
-
+  const [movies, setMovies] = useState(MOVIE_LIST)
 
   return (
     <div>
@@ -72,7 +72,7 @@ export default function Home() {
                   variant="standard"
                   sx={{width: '100%'}}
                   onChange={(event)=> {
-                    setYear(event.target.year)
+                    setYear(event.target.value)
                   }}
                   value={year}
                 />
@@ -89,7 +89,9 @@ export default function Home() {
             </Grid>
           </form>
           <List sx={{width: `100%`}}>
-          { MOVIE_LIST.map((movieData, index)=> {
+          {/* the default value of movies is
+          the MOVIE_LIST so we can change this to movies */}
+          { movies.map((movieData, index)=> {
               return <ListItem key={index}>
                 <ListItemText>
                   <Typography variant="p" component="div">
