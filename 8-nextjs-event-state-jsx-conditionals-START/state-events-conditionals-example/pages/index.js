@@ -31,6 +31,16 @@ export default function Home() {
   // will be the default value.
   const [movies, setMovies] = useState(MOVIE_LIST)
 
+  // on the form I want you folks
+  // I want you folks to create a form event handler
+  // that it's going to validate the inputs
+  // - year needs to be a number
+  // - it needs to be 4 characters.
+  // If it's invalid I want you folks to show
+  // an Alert in the JSX with an appropriate error
+  // message.
+
+
   return (
     <div>
       <Head>
