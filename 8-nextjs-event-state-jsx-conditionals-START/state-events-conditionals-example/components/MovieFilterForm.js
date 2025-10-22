@@ -10,6 +10,8 @@ import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField'
 
+import { MOVIE_LIST } from '../utils/movies'
+
 
 // that we're passing down movies, setMovies
 
