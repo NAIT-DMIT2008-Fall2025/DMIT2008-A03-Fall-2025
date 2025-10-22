@@ -19,7 +19,7 @@ import ListItemText from '@mui/material/ListItemText';
 // Let's import our new form
 import MovieFilterForm from '../components/MovieFilterForm'
 // let's import the movielist component and see if it works
-import  from '../componeMovieListnts/MovieList';
+import MovieList from '../components/MovieList';
 
 import { MOVIE_LIST } from '../utils/movies'
 
@@ -54,7 +54,7 @@ export default function Home() {
             import them and use them.
 
             Note: here this is going to be useful
-            for assignment 3 as well.
+            for assignment 3 as
           */}
           <MovieFilterForm
             movies={movies}
