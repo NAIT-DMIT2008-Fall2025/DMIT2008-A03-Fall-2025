@@ -18,112 +18,15 @@ import ListItemText from '@mui/material/ListItemText';
 
 // Let's import our new form
 import MovieFilterForm from '../components/MovieFilterForm'
+// let's import the movielist component and see if it works
+import  from '../componeMovieListnts/MovieList';
 
 import { MOVIE_LIST } from '../utils/movies'
 
 export default function Home() {
-
-  // I want you make thse variables for the text fields "controlled"
-  // controlled means the input is updating the state for those values.
-  // and value is equal to the stateful value.
-  // create stateful variables for all of the text fields
-  const [search, setSearch] = useState('')
-  const [year, setYear] = useState('')
-
   // I also want you create stateful variables for the MOVIE_LIST (where the movie list)
   // will be the default value.
   const [movies, setMovies] = useState(MOVIE_LIST)
-
-  const [errorMessage, setErrorMessage] = useState('')
-
-  // on the form I want you folks
-  // I want you folks to create a form event handler
-  // that it's going to validate the inputs
-  // - year needs to be a number
-  // - it needs to be 4 characters.
-  // If it's invalid I want you folks to show
-  // an Alert in the JSX with an appropriate error
-  // message.
-  const formHandler = (event) => {
-    event.preventDefault()
-    const isValid = validate()
-    if (isValid) {
-      filterMovies()
-    } else {
-      setMovies([])
-    }
-  }
-
-  // I want you to create function
-  // that will filter based on search only if it has value
-  // that will filter based on year only if it has value
-  // and will filter both if entered.
-  // I want you to update the state for this with setMovies
-  // hint I want you folks to use filter
-  const filterMovies = () => {
-    // make a copy of the array
-    let filteredMovieList = [...MOVIE_LIST]
-    // I'm going to check to see if each year and search
-    // is not empty
-    console.log([...MOVIE_LIST])
-    if (search.trim() !== "") {
-      // inside of the if I'm going to use knowledge of filter
-      // we're going to reassign to the result of hte filter
-      filteredMovieList = filteredMovieList.filter((movie)=> {
-        // remember true to keep it, false to remove it from the list.
-        // this is just a special loop
-        let lowerMovieName = movie.name.toLowerCase()
-        let lowerSearch = search.toLowerCase()
-        // if anything weird is happening
-        // console log the variables here.
-        // strings in js a character arrays
-        return lowerMovieName.includes(lowerSearch)
-      })
-    }
-
-    // three mins do the year.
-    if (year.trim() !== "") {
-      filteredMovieList = filteredMovieList.filter((movie)=> {
-        // I'm going to check to see if it's the same year
-        const yearAsNumber = parseInt(year)
-        // are the years the same.
-        return yearAsNumber === movie.year
-      })
-    }
-
-    // set the movieList to my new filtered movieList
-    setMovies(filteredMovieList)
-  }
-
-
-
-  const validate = () => {
-    // return true or false
-    // I'm going to check if year is a number
-    // check for isNumber
-    // if it's empty it's valid.
-    if (year.trim() === '') {
-      setErrorMessage('')
-      return true
-    }
-
-    // we're only going to validate if there is
-    // a number
-    if (isNaN(year)) {
-      setErrorMessage(`"${year}" is not a valid year, need to be number`)
-      return false
-    }
-
-    if (year.length !== 4) {
-      setErrorMessage(`"${year}" needs to be when we're alive.`)
-      return false
-    }
-
-    // if it return true
-    // we need to clear error message
-    setErrorMessage('')
-    return true
-  }
 
   return (
     <div>
@@ -149,25 +52,17 @@ export default function Home() {
             - one for MovieList
             pass the state down use these in the code!
             import them and use them.
+
+            Note: here this is going to be useful
+            for assignment 3 as well.
           */}
           <MovieFilterForm
             movies={movies}
             setMovies={setMovies}
           />
-          <List sx={{width: `100%`}}>
-            {/* the default value of movies is
-            the MOVIE_LIST so we can change this to movies */}
-            { movies.map((movieData, index)=> {
-                return <ListItem key={index}>
-                  <ListItemText>
-                    <Typography variant="p" component="div">
-                      {movieData.name} ({movieData.year})
-                    </Typography>
-                  </ListItemText>
-                </ListItem>
-              })
-            }
-          </List>
+          <MovieList
+            movies={movies}
+          />
         </Container>
       </main>
     </div>
