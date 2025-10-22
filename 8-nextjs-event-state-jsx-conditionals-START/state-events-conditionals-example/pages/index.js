@@ -139,6 +139,14 @@ export default function Home() {
           <Typography variant="h2" component="h2" style={{textAlign: "center"}}>
             Movies
           </Typography>
+          {/* we want to make smaller reusable components
+            we're going to create two components and we're
+            going to pass state down.
+            - one for MovieFilterForm
+            - one for MovieList
+            pass the state down use these in the code!
+            import them and use them.
+          */}
           <form
             onSubmit={formHandler}
             style={{width: '100%'}}
@@ -188,18 +196,18 @@ export default function Home() {
             </Grid>
           </form>
           <List sx={{width: `100%`}}>
-          {/* the default value of movies is
-          the MOVIE_LIST so we can change this to movies */}
-          { movies.map((movieData, index)=> {
-              return <ListItem key={index}>
-                <ListItemText>
-                  <Typography variant="p" component="div">
-                    {movieData.name} ({movieData.year})
-                  </Typography>
-                </ListItemText>
-              </ListItem>
-            })
-          }
+            {/* the default value of movies is
+            the MOVIE_LIST so we can change this to movies */}
+            { movies.map((movieData, index)=> {
+                return <ListItem key={index}>
+                  <ListItemText>
+                    <Typography variant="p" component="div">
+                      {movieData.name} ({movieData.year})
+                    </Typography>
+                  </ListItemText>
+                </ListItem>
+              })
+            }
           </List>
         </Container>
       </main>
