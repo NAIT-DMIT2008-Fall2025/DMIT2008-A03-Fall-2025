@@ -16,6 +16,9 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 
+// Let's import our new form
+import MovieFilterForm from '../components/MovieFilterForm'
+
 import { MOVIE_LIST } from '../utils/movies'
 
 export default function Home() {
@@ -147,54 +150,10 @@ export default function Home() {
             pass the state down use these in the code!
             import them and use them.
           */}
-          <form
-            onSubmit={formHandler}
-            style={{width: '100%'}}
-          >
-            <Grid container spacing={2}>
-              <Grid item xs={6}>
-                {/* normally for controlling inputs
-                you just directly put the in the
-                onChange */}
-                <TextField
-                  id="search-field"
-                  label="search..."
-                  variant="standard"
-                  sx={{width: '100%'}}
-                  onChange={(event)=> {
-                    setSearch(event.target.value)
-                  }}
-                  value={search}
-                />
-              </Grid>
-              <Grid item xs={4}>
-                <TextField
-                  id="year-field"
-                  label="year"
-                  variant="standard"
-                  sx={{width: '100%'}}
-                  onChange={(event)=> {
-                    setYear(event.target.value)
-                  }}
-                  value={year}
-                />
-              </Grid>
-              <Grid item xs={2}>
-                <Button
-                  type="submit"
-                  variant="contained"
-                >Filter</Button>
-              </Grid>
-              <Grid item xs={10}>
-                {/* Add the error message here */}
-                {errorMessage !== '' &&
-                  <Alert severity='error'>
-                    {errorMessage}
-                  </Alert>
-                }
-              </Grid>
-            </Grid>
-          </form>
+          <MovieFilterForm
+            movies={movies}
+            setMovies={setMovies}
+          />
           <List sx={{width: `100%`}}>
             {/* the default value of movies is
             the MOVIE_LIST so we can change this to movies */}
