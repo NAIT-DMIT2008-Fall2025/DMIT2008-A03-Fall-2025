@@ -26,6 +26,7 @@ export default function Home() {
   const renderQuote = () => {
     console.log('renderQuote executed')
     // fetch the url
+    // url: https://stoic.tekloon.net/stoic-quote
     // I want to set the data of the response.json() to the state try to update it.
   }
 
