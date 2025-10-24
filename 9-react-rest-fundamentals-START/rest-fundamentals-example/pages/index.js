@@ -33,8 +33,8 @@ export default function Home() {
     // fetch the url
     // url: http://localhost:5000/quotes/1
     try {
-
-      const response = await fetch('http://localhost:5000/quotes/1', {
+      const randomInt = getRandomInt()
+      const response = await fetch('http://localhost:5000/quotes/${randomInt}', {
         method: "GET" // get is the default, we'll specify this because
         // later on in the next example we'll take a deeper look at different
         // method.
