@@ -23,11 +23,19 @@ export default function Home() {
 
 
   // create function hook it up to get new quote
-  const renderQuote = () => {
+  const renderQuote = async () => {
     console.log('renderQuote executed')
     // fetch the url
     // url: https://stoic.tekloon.net/stoic-quote
+    const response = await fetch('https://stoic.tekloon.net/stoic-quote', {
+      method: "GET" // get is the default, we'll specify this because
+      // later on in the next example we'll take a deeper look at different
+      // method.
+    })
+    const data = await response.json()
     // I want to set the data of the response.json() to the state try to update it.
+    console.log(data)
+
   }
 
 
