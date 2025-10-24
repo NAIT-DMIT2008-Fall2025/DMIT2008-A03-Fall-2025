@@ -21,6 +21,11 @@ export default function Home() {
   // I want you to also create a stateful object that will hold the "data" attribute from the
   const [quoteData, setQuoteData] = useState({}) // the {} is an empty object.
 
+  const getRandomInt = (maxValue) => {
+    // this is going to get an integer from 1 to 3
+
+    return Math.ceil(Math.random()*3)
+  }
 
   // create function hook it up to get new quote
   const renderQuote = async () => {
