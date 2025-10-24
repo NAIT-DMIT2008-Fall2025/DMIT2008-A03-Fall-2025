@@ -24,7 +24,7 @@ export default function Home() {
   const getRandomInt = (maxValue) => {
     // this is going to get an integer from 1 to 3
 
-    return Math.ceil(Math.random()*3)
+    return Math.ceil(Math.random()*maxValue)
   }
 
   // create function hook it up to get new quote
@@ -33,19 +33,24 @@ export default function Home() {
     // fetch the url
     // url: http://localhost:5000/quotes/1
     try {
-      const randomInt = getRandomInt()
-      const response = await fetch('http://localhost:5000/quotes/${randomInt}', {
+      const randomInt = getRandomInt(3)
+      console.log(randomInt)
+      const response = await fetch(`http://localhost:5000/quotes/${randomInt}`, {
         method: "GET" // get is the default, we'll specify this because
         // later on in the next example we'll take a deeper look at different
         // method.
       })
+      // I want to set the data of the response.json() to the state try to update it.
       const data = await response.json()
       console.log(data) // for debugging purposes
+      // we're going to take this data fetched
+      // set it to the state
+      setQuoteData(data);
     } catch (error) {
       console.log("there's an error")
       console.log(error)
+      // display this to the user in some way.
     }
-    // I want to set the data of the response.json() to the state try to update it.
 
   }
 
