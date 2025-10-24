@@ -33,8 +33,8 @@ export default function Home() {
       // method.
     })
     const data = await response.json()
+    console.log(data) // for debugging purposes
     // I want to set the data of the response.json() to the state try to update it.
-    console.log(data)
 
   }
 
