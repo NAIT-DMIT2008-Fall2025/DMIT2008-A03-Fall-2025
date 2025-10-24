@@ -27,13 +27,19 @@ export default function Home() {
     console.log('renderQuote executed')
     // fetch the url
     // url: https://stoic.tekloon.net/stoic-quote
-    const response = await fetch('https://stoic.tekloon.net/stoic-quote', {
-      method: "GET" // get is the default, we'll specify this because
-      // later on in the next example we'll take a deeper look at different
-      // method.
-    })
-    const data = await response.json()
-    console.log(data) // for debugging purposes
+    try {
+
+      const response = await fetch('https://stoic.tekloon.net/stoic-quote', {
+        method: "GET" // get is the default, we'll specify this because
+        // later on in the next example we'll take a deeper look at different
+        // method.
+      })
+      const data = await response.json()
+      console.log(data) // for debugging purposes
+    } catch (error) {
+      console.log("there's an error")
+      console.log(error)
+    }
     // I want to set the data of the response.json() to the state try to update it.
 
   }
