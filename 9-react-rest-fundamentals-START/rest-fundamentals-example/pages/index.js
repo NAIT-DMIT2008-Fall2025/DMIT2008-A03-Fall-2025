@@ -1,3 +1,7 @@
+// import the state
+
+import { useState } from 'react'
+
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
@@ -11,7 +15,19 @@ import Container from '@mui/material/Container';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
+// install and run the project
+
 export default function Home() {
+  // I want you to also create a stateful object that will hold the "data" attribute from the
+  const [quoteData, setQuoteData] = useState({}) // the {} is an empty object.
+
+
+  // create function hook it up to get new quote
+  const renderQuote = () => {
+    console.log('renderQuote executed')
+    // fetch the url
+    // I want to set the data of the response.json() to the state try to update it.
+  }
 
 
   return (
@@ -60,6 +76,7 @@ export default function Home() {
             >
               <Button
                 variant="contained"
+                onClick={renderQuote}
               >
                 Get New Quote
               </Button>
