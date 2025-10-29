@@ -37,7 +37,7 @@ export default function Home() {
   // create the stateful values for post.
   const [title, setTitle] = useState("")
   const [comments, setComments] = useState("")
-  const [rating, setRating] = useState(0)
+  const [rating, setRating] = useState(1) // we're going to change it to one.
 
   // 3. import your getReviews function
   // 4. create a function that will be
@@ -69,6 +69,29 @@ export default function Home() {
     console.log("title", title)
     console.log("comments", comments)
     console.log("rating", rating)
+    // we're going to return early if there's empty values here
+    if (title.trim() === "" || comments.trim() === "") {
+      return
+    }
+    // we're going to perform the postReview
+    try {
+      // note this is more for our mock api we're going to
+      // pass in an object that looks like the rest of the reviews
+      const data = await postReview({
+        title: title,
+        comment: comments,
+        rating: rating
+      })
+      console.log("successfully posted")
+      console.log(data)
+      // if the above happens it'll be difficult to rerender the data
+      // because it's a request so we'll just make another get request
+      // for consistency of our rendering (this the strategy that react-query)
+      await renderReviews()
+    } catch (error) {
+      console.log(error)
+    }
+
   }
 
 
@@ -128,16 +151,16 @@ export default function Home() {
                       setRating(event.target.value)
                     }}
                   >
-                    <FormControlLabel value="1" control={<Radio />} label="1" />
-                    <FormControlLabel value="2" control={<Radio />} label="2" />
-                    <FormControlLabel value="3" control={<Radio />} label="3" />
-                    <FormControlLabel value="4" control={<Radio />} label="4" />
-                    <FormControlLabel value="5" control={<Radio />} label="5" />
-                    <FormControlLabel value="6" control={<Radio />} label="6" />
-                    <FormControlLabel value="7" control={<Radio />} label="7" />
-                    <FormControlLabel value="8" control={<Radio />} label="8" />
-                    <FormControlLabel value="9" control={<Radio />} label="9" />
-                    <FormControlLabel value="10" control={<Radio />} label="10" />
+                    <FormControlLabel value={1} control={<Radio />} label="1" />
+                    <FormControlLabel value={2} control={<Radio />} label="2" />
+                    <FormControlLabel value={3} control={<Radio />} label="3" />
+                    <FormControlLabel value={4} control={<Radio />} label="4" />
+                    <FormControlLabel value={5} control={<Radio />} label="5" />
+                    <FormControlLabel value={6} control={<Radio />} label="6" />
+                    <FormControlLabel value={7} control={<Radio />} label="7" />
+                    <FormControlLabel value={8} control={<Radio />} label="8" />
+                    <FormControlLabel value={9} control={<Radio />} label="9" />
+                    <FormControlLabel value={10} control={<Radio />} label="10" />
                   </RadioGroup>
                </FormControl>
               </Grid>
