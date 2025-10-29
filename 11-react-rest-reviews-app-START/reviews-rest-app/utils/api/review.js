@@ -42,3 +42,5 @@ export const postReview = async (payload) => {
   const data = await response.json()
   return data
 }
+
+// create a delete function
