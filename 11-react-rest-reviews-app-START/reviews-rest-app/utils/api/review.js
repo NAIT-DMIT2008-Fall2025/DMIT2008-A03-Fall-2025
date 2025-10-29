@@ -1,3 +1,8 @@
+
+// later on when you deploy to a production environment
+// this url will be an environment variable and thisis
+// really handy so that you can point to the production
+// version of this and only update it one spot.
 const BASE_URL = 'http://localhost:5000'
 
 export const getReviews = async () => {
@@ -6,4 +11,6 @@ export const getReviews = async () => {
   // that will return the reviews from the
   // /reviews endpoint on the BASE_URL
   const response = await fetch(`${BASE_URL}/reviews`)
+  const data = await response.json()
+  return data
 }
