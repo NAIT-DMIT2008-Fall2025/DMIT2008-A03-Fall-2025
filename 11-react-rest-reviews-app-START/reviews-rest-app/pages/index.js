@@ -34,6 +34,11 @@ import { getReviews, postReview } from '../utils/api/review';
 export default function Home() {
   // create a reviews stateful variable
   const [reviews, setReviews] = useState([]) // array initial value.
+  // create the stateful values for post.
+  const [title, setTitle] = useState("")
+  const [comments, setComments] = useState("")
+  const [rating, setRating] = useState(0)
+
   // 3. import your getReviews function
   // 4. create a function that will be
   // called when you click the "load all reviews"
@@ -56,7 +61,7 @@ export default function Home() {
 
   // post
   // 2. import the post
-  // 3. create stateful controlled variables for the inputs
+  // 3. create stateful controlled variables for the inputs (above)
   // 4. i want you to pass that as an object into the postReview
   // 5. I want you to call renderReviews if successful.
 
@@ -91,6 +96,10 @@ export default function Home() {
                   label="Adaptation Title"
                   fullWidth
                   variant="standard"
+                  value={title}
+                  onChange={(event) => {
+                    setTitle(event.target.value)
+                  }}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
@@ -100,6 +109,10 @@ export default function Home() {
                   label="Comments"
                   fullWidth
                   variant="standard"
+                  value={comments}
+                  onChange={(event) => {
+                    setComments(event.target.value)
+                  }}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
@@ -109,6 +122,10 @@ export default function Home() {
                     row
                     aria-labelledby="adaptation-rating"
                     name="rating-buttons-group"
+                    value={rating}
+                    onChange={(event) => {
+                      setRating(event.target.value)
+                    }}
                   >
                     <FormControlLabel value="1" control={<Radio />} label="1" />
                     <FormControlLabel value="2" control={<Radio />} label="2" />
