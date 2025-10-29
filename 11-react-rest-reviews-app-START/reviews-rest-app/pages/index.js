@@ -28,8 +28,15 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
 
-
 export default function Home() {
+  // 2. import state
+  // create a reviews stateful variable
+  // 3. import your getReviews function
+  // 4. create a function that will be
+  // called when you click the "load all reviews"
+  // button
+  // that will set the state of the variable.
+
   const MOCK_ADAPTATION_RATING = [{
     'title': 'Fight Club',
     'comment': 'Great movie and book',
@@ -122,13 +129,13 @@ export default function Home() {
                     {adaptation.rating}
                   </Avatar>
                 }
-                
+
                 title={
                   <Typography variant="body2" color="text.secondary">
                     {adaptation.title}
                   </Typography>
                 }
-                
+
               />
               <CardContent>
                 <Typography variant="body2" color="text.secondary">
