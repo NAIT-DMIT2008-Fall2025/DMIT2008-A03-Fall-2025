@@ -88,10 +88,15 @@ export default function Home() {
       // because it's a request so we'll just make another get request
       // for consistency of our rendering (this the strategy that react-query)
       await renderReviews()
+      resetForm()
     } catch (error) {
       console.log(error)
     }
-
+  }
+  const resetForm = () => {
+    setTitle("")
+    setComments("")
+    setRating(1)
   }
 
 
