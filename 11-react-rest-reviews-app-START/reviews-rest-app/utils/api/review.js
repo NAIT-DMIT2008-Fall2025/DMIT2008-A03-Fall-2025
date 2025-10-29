@@ -17,3 +17,8 @@ export const getReviews = async () => {
   const data = await response.json()
   return data
 }
+
+export const postReview = (payload) => {
+  // 1. make a post request to that server
+  // to return this data.
+}

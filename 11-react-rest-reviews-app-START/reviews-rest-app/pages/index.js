@@ -54,6 +54,13 @@ export default function Home() {
   // 5. update the reviews in the jsx so it uses
   // your fetched rebiewd.
 
+  // post
+  // 2. import the post
+  // 3. create stateful controlled variables for the inputs
+  // 4. i want you to pass that as an object into the postReview
+  // 5. I want you to call renderReviews if successful.
+
+
   const MOCK_ADAPTATION_RATING = [{
     'title': 'Fight Club',
     'comment': 'Great movie and book',
