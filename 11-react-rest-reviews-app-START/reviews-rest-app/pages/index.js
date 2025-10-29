@@ -27,6 +27,9 @@ import RadioGroup from '@mui/material/RadioGroup';
 import TextField from '@mui/material/TextField';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+// add the delete icon.
+import DeleteIcon from '@mui/icons-material/Delete';
 
 import { getReviews, postReview } from '../utils/api/review';
 
@@ -200,6 +203,12 @@ export default function Home() {
                   <Avatar sx={{ bgcolor: 'blue' }} aria-label="recipe">
                     {adaptation.rating}
                   </Avatar>
+                }
+
+                action={
+                  <IconButton>
+                    <DeleteIcon />
+                  </IconButton>
                 }
 
                 title={
