@@ -96,11 +96,16 @@ export default function Home() {
       console.log(error)
     }
   }
+
   const resetForm = () => {
     setTitle("")
     setComments("")
     setRating(1)
   }
+
+  // to import your delete function
+  // in jsx pass the id of the review to this function
+  // I want you to call the delete function.
 
 
   return (
