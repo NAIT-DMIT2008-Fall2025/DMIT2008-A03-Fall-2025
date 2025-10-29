@@ -28,10 +28,10 @@ import TextField from '@mui/material/TextField';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
-import { getReviews } from '../utils/api/review';
+import { getReviews, postReview } from '../utils/api/review';
 
+// 2. import state (done above.)
 export default function Home() {
-  // 2. import state
   // create a reviews stateful variable
   const [reviews, setReviews] = useState([]) // array initial value.
   // 3. import your getReviews function
