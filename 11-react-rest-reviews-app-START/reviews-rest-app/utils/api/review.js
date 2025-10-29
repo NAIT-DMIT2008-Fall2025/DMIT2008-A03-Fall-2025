@@ -10,7 +10,9 @@ export const getReviews = async () => {
   // using the async/await syntax
   // that will return the reviews from the
   // /reviews endpoint on the BASE_URL
-  const response = await fetch(`${BASE_URL}/reviews`)
+  const response = await fetch(`${BASE_URL}/reviews`,{
+    method: "GET"
+  })
   if (!response.ok) {
     throw new Error('Network request error')
   }
@@ -18,7 +20,25 @@ export const getReviews = async () => {
   return data
 }
 
-export const postReview = (payload) => {
+export const postReview = async (payload) => {
   // 1. make a post request to that server
   // to return this data.
+  // it's going to need a body (JSON.stringify the payload)
+  // it's going to need some headers
+  const response = await fetch(`${BASE_URL}/reviews`, {
+    method: "POST", // we're giving info to the server.
+    headers: {
+      "Content-Type": "application/json"
+      // we're going to be sending json to the server
+      // so we need to tell the server what type of
+      // content we're sending.
+    },
+    body: JSON.stringify(payload)
+    // sending json to the server of our payload.
+  })
+  if (!response.ok) {
+    throw new Error('Network request error')
+  }
+  const data = await response.json()
+  return data
 }
