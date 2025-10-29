@@ -64,13 +64,14 @@ export default function Home() {
   // 3. create stateful controlled variables for the inputs (above)
   // 4. i want you to pass that as an object into the postReview
   // 5. I want you to call renderReviews if successful.
+  const createNewReview = async (event) => {
+    event.preventDefault()
+    console.log("title", title)
+    console.log("comments", comments)
+    console.log("rating", rating)
+  }
 
 
-  const MOCK_ADAPTATION_RATING = [{
-    'title': 'Fight Club',
-    'comment': 'Great movie and book',
-    'rating': 10
-  }]
   return (
     <div>
       <Head>
@@ -87,7 +88,7 @@ export default function Home() {
       </AppBar>
       <main>
         <Container maxWidth="md">
-          <form>
+          <form onSubmit={createNewReview}>
             <Grid container spacing={3}>
               <Grid item xs={12} sm={12}>
                 <TextField
