@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Head from 'next/head'
 import Image from 'next/image'
 
@@ -27,15 +28,29 @@ import TextField from '@mui/material/TextField';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
+import { getReviews } from '../utils/api/review';
 
 export default function Home() {
   // 2. import state
   // create a reviews stateful variable
+  const [reviews, setReviews] = useState([]) // array initial value.
   // 3. import your getReviews function
   // 4. create a function that will be
+  const renderReviews = async () => {
+    // this needs to be async, because getReviews is async.
+    // catch it.
+    try {
+      const reviewsData = await getReviews()
+      console.log("reviewsData", reviewsData)
+    } catch (error) {
+      console.log(error)
+    }
+  }
   // called when you click the "load all reviews"
   // button
   // that will set the state of the variable.
+  // 5. update the reviews in the jsx so it uses
+  // your fetched rebiewd.
 
   const MOCK_ADAPTATION_RATING = [{
     'title': 'Fight Club',
@@ -103,6 +118,7 @@ export default function Home() {
                 <Button
                   variant="contained"
                   type="submit"
+                  onClick={renderReviews}
                 >
                   Add New Review
                 </Button>

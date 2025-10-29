@@ -11,6 +11,9 @@ export const getReviews = async () => {
   // that will return the reviews from the
   // /reviews endpoint on the BASE_URL
   const response = await fetch(`${BASE_URL}/reviews`)
+  if (!response.ok) {
+    throw new Error('Network request error')
+  }
   const data = await response.json()
   return data
 }
