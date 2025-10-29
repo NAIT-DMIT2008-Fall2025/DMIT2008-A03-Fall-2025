@@ -36,18 +36,20 @@ export default function Home() {
   const [reviews, setReviews] = useState([]) // array initial value.
   // 3. import your getReviews function
   // 4. create a function that will be
+  // called when you click the "load all reviews"
+  // button
   const renderReviews = async () => {
     // this needs to be async, because getReviews is async.
     // catch it.
     try {
       const reviewsData = await getReviews()
       console.log("reviewsData", reviewsData)
+      // set the state
+      setReviews(reviewsData)
     } catch (error) {
       console.log(error)
     }
   }
-  // called when you click the "load all reviews"
-  // button
   // that will set the state of the variable.
   // 5. update the reviews in the jsx so it uses
   // your fetched rebiewd.
@@ -118,7 +120,7 @@ export default function Home() {
                 <Button
                   variant="contained"
                   type="submit"
-                  onClick={renderReviews}
+
                 >
                   Add New Review
                 </Button>
@@ -133,12 +135,13 @@ export default function Home() {
           >
             <Button
               variant="contained"
+              onClick={renderReviews}
             >
               Load All Current Reviews
             </Button>
           </Box>
-          {MOCK_ADAPTATION_RATING.map((adaptation, index)=> {
-            return <Card key={index}>
+          {reviews.map((adaptation, index)=> {
+            return <Card key={index} sx={{marginTop: 2}}>
               <CardHeader
                 avatar={
                   <Avatar sx={{ bgcolor: 'blue' }} aria-label="recipe">
