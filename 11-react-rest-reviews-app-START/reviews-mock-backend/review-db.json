@@ -1,12 +1,6 @@
 {
   "reviews": [
     {
-      "id": 2,
-      "title": "The Lord of the rings",
-      "comment": "A classic movie and a classic book series as well!",
-      "rating": 10
-    },
-    {
       "title": "Foundation",
       "comment": "books were okay, show was pretty good.",
       "rating": "9",
@@ -17,6 +11,12 @@
       "comment": "Fantastic",
       "rating": "9",
       "id": 5
+    },
+    {
+      "title": "Fight club",
+      "comment": "this only book book to read from him.",
+      "rating": 1,
+      "id": 6
     }
   ]
 }

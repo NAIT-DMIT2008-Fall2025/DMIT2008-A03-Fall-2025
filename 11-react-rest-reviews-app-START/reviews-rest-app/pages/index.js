@@ -91,6 +91,8 @@ export default function Home() {
       resetForm()
     } catch (error) {
       console.log(error)
+      // this would be a great time to
+      // render a toast message or snackbar
     }
   }
 
@@ -106,6 +108,8 @@ export default function Home() {
       await renderReviews()
     } catch (error) {
       console.log(error)
+      // this would be a great time to
+      // render a toast message or snackbar
     }
   }
 
