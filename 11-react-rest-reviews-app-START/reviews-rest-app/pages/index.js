@@ -31,7 +31,7 @@ import IconButton from '@mui/material/IconButton';
 // add the delete icon.
 import DeleteIcon from '@mui/icons-material/Delete';
 
-import { getReviews, postReview } from '../utils/api/review';
+import { getReviews, postReview, deleteReview } from '../utils/api/review';
 
 // 2. import state (done above.)
 export default function Home() {
@@ -69,9 +69,6 @@ export default function Home() {
   // 5. I want you to call renderReviews if successful.
   const createNewReview = async (event) => {
     event.preventDefault()
-    console.log("title", title)
-    console.log("comments", comments)
-    console.log("rating", rating)
     // we're going to return early if there's empty values here
     if (title.trim() === "" || comments.trim() === "") {
       return
