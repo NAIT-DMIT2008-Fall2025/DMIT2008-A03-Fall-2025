@@ -101,10 +101,11 @@ export default function Home() {
     // we're going to do two things here
     try {
       // 1. we're going to delete the item
-
+      await deleteReview(id)
       // 2. we're just going to refresh the data.
+      await renderReviews()
     } catch (error) {
-
+      console.log(error)
     }
   }
 
@@ -223,7 +224,9 @@ export default function Home() {
 
                 action={
                   <IconButton onClick={
-                    deleteReviewItem
+                    // please review the diagram for more help
+                    // one why we do it this way.
+                    () => deleteReviewItem(adaptation.id)
                   }>
                     <DeleteIcon />
                   </IconButton>

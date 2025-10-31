@@ -48,7 +48,9 @@ export const postReview = async (payload) => {
 // create a delete function a parameter of id
 // use the id to delete.
 export const deleteReview = async (id) => {
-  const response = await fetch(`${BASE_URL}/reviews`, {
+  // we're using the id in the url so that the backend
+  // knows exactly which resource to remove here.
+  const response = await fetch(`${BASE_URL}/reviews/${id}`, {
     method: "DELETE"
   })
   // this is important because we want to
