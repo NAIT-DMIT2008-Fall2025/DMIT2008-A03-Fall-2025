@@ -45,6 +45,9 @@ export default function Home() {
   // let's take a look at useEffect.
   useEffect(()=> {
     console.log('Home mounted')
+    renderReviews()
+    // won't cause an infinite loop because it's
+    // not listening to those changes.
   }, []) // this will fire when the home
   // component is created.
   // this is fired we'll talk about how this is improved
@@ -225,19 +228,6 @@ export default function Home() {
               </Grid>
             </Grid>
           </form>
-          <Box
-            sx={{
-              pt: 2,
-              pb: 2,
-            }}
-          >
-            <Button
-              variant="contained"
-              onClick={renderReviews}
-            >
-              Load All Current Reviews
-            </Button>
-          </Box>
           {reviews.map((adaptation, index)=> {
             return <Card key={index} sx={{marginTop: 2}}>
               <CardHeader
