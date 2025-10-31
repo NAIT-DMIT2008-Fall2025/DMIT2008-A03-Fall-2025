@@ -47,7 +47,15 @@ export default function Home() {
     console.log('Home mounted')
   }, []) // this will fire when the home
   // component is created.
+  // this is fired we'll talk about how this is improved
+  // in future versions of react
 
+  // let's take a look at every time that reviews
+  // changes
+  useEffect(()=> {
+    console.log("reviews changed")
+    console.log(reviews)
+  }, [reviews]) // listening to the changes
 
   // 3. import your getReviews function
   // 4. create a function that will be
