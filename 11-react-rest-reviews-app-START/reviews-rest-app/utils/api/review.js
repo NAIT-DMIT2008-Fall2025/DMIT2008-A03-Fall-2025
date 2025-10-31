@@ -32,6 +32,8 @@ export const postReview = async (payload) => {
       // we're going to be sending json to the server
       // so we need to tell the server what type of
       // content we're sending.
+      // This is also where you'd add your tokens
+      // for authorization
     },
     body: JSON.stringify(payload)
     // sending json to the server of our payload.
