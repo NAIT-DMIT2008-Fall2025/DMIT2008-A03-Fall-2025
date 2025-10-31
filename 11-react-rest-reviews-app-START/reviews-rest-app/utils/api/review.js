@@ -51,6 +51,12 @@ export const deleteReview = async (id) => {
   const response = await fetch(`${BASE_URL}/reviews`, {
     method: "DELETE"
   })
+  // this is important because we want to
+  // throw an error to be caught if the response
+  // is not 200s
+  if (!response.ok) {
+    throw new Error('Network request error')
+  }
   const data = await response.json()
   return data
 }

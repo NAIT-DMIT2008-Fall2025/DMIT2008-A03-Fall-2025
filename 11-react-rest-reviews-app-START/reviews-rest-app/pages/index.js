@@ -99,8 +99,13 @@ export default function Home() {
   const deleteReviewItem = async (id) => {
     console.log("deleteReviewItem", id)
     // we're going to do two things here
-    // 1. we're going to delete the item
-    // 2. we're just going to refresh the data.
+    try {
+      // 1. we're going to delete the item
+
+      // 2. we're just going to refresh the data.
+    } catch (error) {
+
+    }
   }
 
   const resetForm = () => {
