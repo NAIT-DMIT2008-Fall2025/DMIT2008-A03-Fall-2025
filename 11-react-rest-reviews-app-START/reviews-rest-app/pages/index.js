@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Head from 'next/head'
 import Image from 'next/image'
 
@@ -41,6 +41,13 @@ export default function Home() {
   const [title, setTitle] = useState("")
   const [comments, setComments] = useState("")
   const [rating, setRating] = useState(1) // we're going to change it to one.
+
+  // let's take a look at useEffect.
+  useEffect(()=> {
+    console.log('Home mounted')
+  }, []) // this will fire when the home
+  // component is created.
+
 
   // 3. import your getReviews function
   // 4. create a function that will be
