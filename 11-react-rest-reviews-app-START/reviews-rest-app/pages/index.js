@@ -94,6 +94,14 @@ export default function Home() {
     }
   }
 
+  // we're going to create a function called delete
+  // reviewItem
+  const deleteReviewItem = async (id) => {
+    console.log("deleteReviewItem", id)
+    // we're going to do two things here
+
+  }
+
   const resetForm = () => {
     setTitle("")
     setComments("")
@@ -208,7 +216,9 @@ export default function Home() {
                 }
 
                 action={
-                  <IconButton>
+                  <IconButton onClick={
+                    deleteReviewItem
+                  }>
                     <DeleteIcon />
                   </IconButton>
                 }
