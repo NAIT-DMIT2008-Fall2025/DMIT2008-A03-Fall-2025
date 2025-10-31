@@ -7,16 +7,10 @@
       "id": 4
     },
     {
-      "title": "Akira",
-      "comment": "Fantastic",
-      "rating": "9",
-      "id": 5
-    },
-    {
-      "title": "Fight club",
-      "comment": "this only book book to read from him.",
-      "rating": 1,
-      "id": 6
+      "title": "Adaptation",
+      "comment": "Nicholas cage.",
+      "rating": "10",
+      "id": 7
     }
   ]
 }

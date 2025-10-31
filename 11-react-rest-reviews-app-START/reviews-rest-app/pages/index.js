@@ -55,7 +55,13 @@ export default function Home() {
   useEffect(()=> {
     console.log("reviews changed")
     console.log(reviews)
+    // if I use setReviews here this it will cause
+    // infinite loop of updating the reviews.
+    // don't set stateful inside of an effect
+    // that you're listening to.
   }, [reviews]) // listening to the changes
+  // note this is a great way to see exactly
+  // what your state is doing
 
   // 3. import your getReviews function
   // 4. create a function that will be
