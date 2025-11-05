@@ -14,25 +14,36 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
 export default function Home() {
-  const RANDOM_QUOTE_URL = 'https://api.quotable.io/random'
+  // since we are on the same server
+  // I don't need to put the domain.
+  const RANDOM_QUOTE_URL = '/api/randomQuote'
+
   const [quoteData, setQuoteData] = useState({
     quote: "Quote here.",
     author: "Author here"
   })
 
-  const handleClick = () => {
-    fetch(RANDOM_QUOTE_URL)
-      .then((response)=> {
-        return response.json()
-      }).then((data)=> {
-        setQuoteData({
-          quote: data.content,
-          author: data.author
-        })
+  // write the click function
+  // make it async
+  // I want to fetch the data from the random quote url
+  // I want to use an effect to load it when the page
+  // is initially mounted
+
+
+  const handleClick = async () => {
+    try {
+      const response = await fetch(RANDOM_QUOTE_URL,{
+        method: "GET"
       })
-
-
-    
+      if (!response.ok) {
+        throw new Error("Network error")
+      }
+      const data = await response.json()
+      console.log(data)
+    } catch (error) {
+      // handle this in a second
+      console.error(error)
+    }
   }
 
   return (
