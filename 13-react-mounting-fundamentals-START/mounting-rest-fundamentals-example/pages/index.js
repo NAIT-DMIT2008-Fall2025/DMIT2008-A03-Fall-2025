@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import { useState, useEffect } from 'react'
 
 import Head from 'next/head'
 import Image from 'next/image'
@@ -32,6 +32,7 @@ export default function Home() {
 
   const handleClick = async () => {
     try {
+      // first we fetch
       const response = await fetch(RANDOM_QUOTE_URL,{
         method: "GET"
       })
@@ -39,12 +40,27 @@ export default function Home() {
         throw new Error("Network error")
       }
       const data = await response.json()
+      // then we set the data
+      setQuoteData({
+        quote: data.quote,
+        author: data.author
+      })
+
       console.log(data)
     } catch (error) {
       // handle this in a second
       console.error(error)
     }
   }
+
+  useEffect(() => {
+    console.log("On mount")
+    // this is an async function called synchronously
+    handleClick()
+    // this is fine because we're not using the result
+    // the function is executing and setting state
+  }, [])
+  // reminder [] for the dep array and the normal function will
 
   return (
     <div>
