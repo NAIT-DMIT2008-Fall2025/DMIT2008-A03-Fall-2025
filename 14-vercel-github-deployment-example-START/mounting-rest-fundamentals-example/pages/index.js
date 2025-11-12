@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react'
 
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -12,6 +10,7 @@ import Container from '@mui/material/Container';
 
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import CircularProgress from '@mui/material/CircularProgress';
 
 export default function Home() {
   // since we are on the same server
@@ -22,34 +21,46 @@ export default function Home() {
     quote: "Quote here.",
     author: "Author here"
   })
-
-  // write the click function
-  // make it async
-  // I want to fetch the data from the random quote url
-  // I want to use an effect to load it when the page
-  // is initially mounted
-
+  //
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
+  // create a new branch
+  // make the changes in the file
+  // where the changes are error and loading states
+  // push up those changes
+  // make a pull request
+  // merge it see it deployed.
 
   const handleClick = async () => {
+    // we're going to set loading true
+    setLoading(true);
     try {
+      // I'm adding an artificial delay
+      await new Promise(resolve => setTimeout(resolve, 1500));
+
       // first we fetch
+
       const response = await fetch(RANDOM_QUOTE_URL,{
         method: "GET"
       })
       if (!response.ok) {
         throw new Error("Network error")
       }
+
       const data = await response.json()
       // then we set the data
       setQuoteData({
         quote: data.quote,
         author: data.author
       })
-
+      // set the loading to false because it's been fetched
+      setLoading(false)
+      setError('')
       console.log(data)
-    } catch (error) {
+    } catch (errorMessage) {
       // handle this in a second
-      console.error(error)
+      setLoading(false) // because it's no longer loading.
+      setError(`Error handling request: ${errorMessage}`)
     }
   }
 
@@ -61,6 +72,56 @@ export default function Home() {
     // the function is executing and setting state
   }, [])
   // reminder [] for the dep array and the normal function will
+  // handling loading state
+  if (loading) {
+    return <div>
+      <AppBar position="relative">
+        <Toolbar>
+          <Typography variant="h6" color="inherit" noWrap>
+            We Love Quotes
+          </Typography>
+        </Toolbar>
+      </AppBar>
+
+      <Box
+        display="flex"
+        justifyContent="center"
+        maxWidth
+        sx={{
+          bgcolor: 'background.paper',
+          p: 10,
+        }}
+      >
+        <CircularProgress enableTrackSlot size="30px" />
+      </Box>
+
+    </div>
+  }
+  // handling error state
+  if (error !== '') {
+    return <>
+      <AppBar position="relative">
+        <Toolbar>
+          <Typography variant="h6" color="inherit" noWrap>
+            We Love Quotes
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Box
+        display="flex"
+        justifyContent="center"
+        maxWidth
+        sx={{
+          bgcolor: 'background.paper',
+          p: 10,
+        }}
+      >
+        <Typography color="error">
+          {error}
+        </Typography>
+      </Box>
+    </>
+  }
 
   return (
     <div>

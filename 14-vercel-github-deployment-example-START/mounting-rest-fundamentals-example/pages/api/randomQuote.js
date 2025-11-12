@@ -28,5 +28,4 @@ export default function handler(req, res) {
 
   // first let's pass all of the data.
   res.status(200).json(quoteData[randomIndex])
-
 }
