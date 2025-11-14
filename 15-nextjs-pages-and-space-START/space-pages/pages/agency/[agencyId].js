@@ -5,6 +5,8 @@ export default function AgencyPage() {
 
   // get the agencyId which is the dynamic Path
   console.log(router)
+  // our file name is [agencyId].js
+  // this is where we're gitting this data
   const { agencyId } = router.query
 
   return <>
