@@ -21,7 +21,11 @@ export default function AgencyCard(props) {
     router.push(`/agency/${props.id}`)
   }
 
-  // trigger on click of the button.
+  // create a page using the dynamic path
+  // that will take an id here.
+  // get that id from router query (need useRouter)
+  // print this out on the component.
+
 
   return <Card sx={{ marginTop: "8px", maxWidth: 345 }}>
     {props.imageUrl && <CardMedia
