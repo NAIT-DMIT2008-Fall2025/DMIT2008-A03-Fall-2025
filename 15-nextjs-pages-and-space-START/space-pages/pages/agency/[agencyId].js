@@ -1,8 +1,13 @@
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 
 import {useRouter} from 'next/router'
 
+import { getAgency } from '@utils/api/agencies'
+
 export default function AgencyPage() {
+  const [agency, setAgency] = useState()
+  const [loading, setLoading] = useState(true)
+
   const router = useRouter()
 
   // get the agencyId which is the dynamic Path
@@ -16,10 +21,18 @@ export default function AgencyPage() {
     if (!agencyId) {
       return
     }
-
+    // so this is only going to trigger
+    // the the agencyId exists.
+    renderAgency()
   }, [])
 
   // get agency data
+  const renderAgency = async () => {
+    setLoading(true)
+    const data = await getAgency(agencyId)
+    setLoading(false)
+    setAgency(data)
+  }
   // import the state
   // create a stateful variable for agency
   // handle the loading state
