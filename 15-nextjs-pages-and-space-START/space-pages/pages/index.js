@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react'
+
 import Head from 'next/head'
 
 import Typography from '@mui/material/Typography';
@@ -12,9 +14,26 @@ import { getAgencies } from '@utils/api/agencies';
 export default function Home() {
   // import the useState, useEffect
   // create a stateful value of agencies
+  const [agencies, setAgencies] = useState([])
+  const [loading, setLoading] = useState(true)
   // fetch that data
-  // handle the loading state "loading..."
+  const renderAgencies = async () => {
+    setLoading(true)
+    const data = await getAgencies()
+    setLoading(false)
+    console.log(data)
+  }
+  // when the page is loaded we're fetching the agencies
+  useEffect(()=> {
+    renderAgencies()
+  }, [])
+
   // loop through and create those agencies.
+
+  // handle the loading state "loading..."
+  if (loading) {
+    return <>Loading...</>
+  }
 
 
   return (
