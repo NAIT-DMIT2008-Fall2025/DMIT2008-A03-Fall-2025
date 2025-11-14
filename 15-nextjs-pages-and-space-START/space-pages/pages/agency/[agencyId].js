@@ -38,8 +38,11 @@ export default function AgencyPage() {
   // handle the loading state
   // just put the title.
 
+  if (loading) {
+    return <>Loading</>
+  }
 
   return <>
-    <h1>Agency {agencyId}</h1>
+    <h1>Agency: {agency.name} ({agency.abbrev})</h1>
   </>
 }
