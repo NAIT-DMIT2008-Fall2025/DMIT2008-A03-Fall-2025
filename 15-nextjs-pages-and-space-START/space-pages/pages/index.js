@@ -10,7 +10,11 @@ import NavBar from '@components/NavBar';
 import { getAgencies } from '@utils/api/agencies';
 
 export default function Home() {
-
+  // import the useState, useEffect
+  // create a stateful value of agencies
+  // fetch that data
+  // handle the loading state "loading..."
+  // loop through and create those agencies.
 
 
   return (
