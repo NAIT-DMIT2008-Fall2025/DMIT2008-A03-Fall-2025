@@ -2,6 +2,7 @@
 https://mui.com/material-ui/react-card/#media
 
 */
+import { useRouter } from 'next/router';
 
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -13,8 +14,13 @@ import Typography from '@mui/material/Typography';
 export default function AgencyCard(props) {
   // import useRouter from next/router
   // create the variable router with the useRouter hook
+  const router = useRouter()
   // create a function that will navigate to the page
-  // /agency/id (where the id is passed in)
+  const navigateToAgencyPage = () => {
+    // /agency/id (where the id is passed in)
+    router.push(`/agency/${props.id}`)
+  }
+
   // trigger on click of the button.
 
   return <Card sx={{ marginTop: "8px", maxWidth: 345 }}>
@@ -36,7 +42,10 @@ export default function AgencyCard(props) {
       </Typography>
     </CardContent>
     <CardActions>
-      <Button size="small">Go to Agency</Button>
+      <Button
+        onClick={navigateToAgencyPage}
+        size="small"
+      >Go to Agency</Button>
     </CardActions>
   </Card>
 }
