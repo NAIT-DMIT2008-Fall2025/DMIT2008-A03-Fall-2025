@@ -16,7 +16,6 @@ git clone <repo-url>
 - Periodically after/during the class pull the repo.
 git pull
 
-
 ## Using degit
 
 - install `degit` locally

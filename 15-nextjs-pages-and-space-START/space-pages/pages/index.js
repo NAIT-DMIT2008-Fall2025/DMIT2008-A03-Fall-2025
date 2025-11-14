@@ -7,8 +7,11 @@ import Box from '@mui/material/Box';
 import AgencyCard from '@components/AgencyCard';
 import NavBar from '@components/NavBar';
 
+import { getAgencies } from '@utils/api/agencies';
 
 export default function Home() {
+
+
 
   return (
     <div>
