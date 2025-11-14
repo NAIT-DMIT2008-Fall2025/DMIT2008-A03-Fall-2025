@@ -18,10 +18,13 @@ export default function Home() {
   const [loading, setLoading] = useState(true)
   // fetch that data
   const renderAgencies = async () => {
+    // note handle errors and such.
     setLoading(true)
     const data = await getAgencies()
     setLoading(false)
     console.log(data)
+    // we have the data loaded we're going set it
+    setAgencies(data.results)
   }
   // when the page is loaded we're fetching the agencies
   useEffect(()=> {
@@ -59,6 +62,21 @@ export default function Home() {
               alignItems: 'center',
             }}
           >
+          { agencies.map((agency) => {
+            // agencies is the data fetched
+            // and set to the state
+            // passing this as props to the component
+            // Agency card
+            return <AgencyCard
+              key={agency.id}
+              name={agency.name}
+              imageUrl={agency.image?.image_url}
+              abbreviation={agency.abbrev}
+              description={agency.description}
+            />
+          })
+
+          }
           </Box>
         </Container>
 
