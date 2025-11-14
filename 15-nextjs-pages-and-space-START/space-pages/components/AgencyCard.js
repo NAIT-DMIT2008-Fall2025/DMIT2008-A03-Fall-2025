@@ -11,7 +11,13 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 export default function AgencyCard(props) {
-    return <Card sx={{ marginTop: "8px", maxWidth: 345 }}>
+  // import useRouter from next/router
+  // create the variable router with the useRouter hook
+  // create a function that will navigate to the page
+  // /agency/id (where the id is passed in)
+  // trigger on click of the button.
+
+  return <Card sx={{ marginTop: "8px", maxWidth: 345 }}>
     {props.imageUrl && <CardMedia
       component="img"
       height="140"

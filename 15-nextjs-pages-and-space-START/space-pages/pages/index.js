@@ -69,6 +69,7 @@ export default function Home() {
             // Agency card
             return <AgencyCard
               key={agency.id}
+              id={agency.id}
               name={agency.name}
               imageUrl={agency.image?.image_url}
               abbreviation={agency.abbrev}
