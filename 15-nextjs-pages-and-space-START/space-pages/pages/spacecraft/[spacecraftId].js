@@ -3,7 +3,7 @@ import {useEffect, useState} from 'react'
 import { useRouter } from "next/router"
 
 import Typography from '@mui/material/Typography'
-
+import Container from '@mui/material/Container'
 
 import NavBar from '@components/NavBar'
 import LoadingCircle from '@components/LoadingCircle'
@@ -58,24 +58,26 @@ export default function SpaceCraftPage() {
   // an image and a wiki url.
   return <>
     <NavBar />
-    <Typography variant="h3" component="h1" margin={2}>
-      {spacecraft.name} ({spacecraft.agency.abbrev})
-    </Typography>
-    <SimpleDetailsCard
-      title="details"
-      description={spacecraft.details}
-    />
-    <SimpleDetailsCard
-      title={"History"}
-      description={
-        spacecraft.history
-      }
-    />
-    <SimpleDetailsCard
-      title={"What it looks like"}
-      description={
-        <img src={spacecraft.image.image_url} style={{width: "100%"}}></img>
-      }
-    />
+    <Container>
+      <Typography variant="h3" component="h1" margin={2}>
+        {spacecraft.name} ({spacecraft.agency.abbrev})
+      </Typography>
+      <SimpleDetailsCard
+        title="details"
+        description={spacecraft.details}
+      />
+      <SimpleDetailsCard
+        title={"History"}
+        description={
+          spacecraft.history
+        }
+      />
+      <SimpleDetailsCard
+        title={"What it looks like"}
+        description={
+          <img src={spacecraft.image.image_url} style={{width: "100%"}}></img>
+        }
+      />
+    </Container>
   </>
 }
