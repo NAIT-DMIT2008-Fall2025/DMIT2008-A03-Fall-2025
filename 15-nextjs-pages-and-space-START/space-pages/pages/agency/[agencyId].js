@@ -2,6 +2,9 @@ import {useEffect, useState} from 'react'
 
 import {useRouter} from 'next/router'
 
+import LoadingCircle from '@components/LoadingCircle'
+import NavBar from '@components/NavBar'
+
 import { getAgency } from '@utils/api/agencies'
 
 export default function AgencyPage() {
@@ -30,19 +33,21 @@ export default function AgencyPage() {
   const renderAgency = async () => {
     setLoading(true)
     const data = await getAgency(agencyId)
+    console.log(data)
     setLoading(false)
     setAgency(data)
   }
-  // import the state
-  // create a stateful variable for agency
-  // handle the loading state
-  // just put the title.
 
+  // we're going to use this loading to create the app.
   if (loading) {
-    return <>Loading</>
+    return <>
+      <NavBar />
+      <LoadingCircle />
+    </>
   }
 
   return <>
+    <NavBar />
     <h1>Agency: {agency.name} ({agency.abbrev})</h1>
   </>
 }
