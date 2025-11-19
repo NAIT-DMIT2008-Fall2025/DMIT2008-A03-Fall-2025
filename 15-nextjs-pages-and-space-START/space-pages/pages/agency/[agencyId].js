@@ -31,7 +31,9 @@ export default function AgencyPage() {
     // so this is only going to trigger
     // the the agencyId exists.
     renderAgency()
-  }, [])
+
+    // we need to listen to the id being changed.
+  }, [agencyId])
 
   // get agency data
   const renderAgency = async () => {
@@ -75,9 +77,11 @@ export default function AgencyPage() {
         buttonCallback={()=> {
           // in this call back to navigate to a page that is called
           // /spacecraft/spacecraftId where spacecraftId is dynamic
+          router.push(`/spacecraft/${spacecraft.id}`)
           // in a new file you'll create do the following.
           // create the page so that it doesn't 404
           // get the spacecraftId and render it on the page.
+
         }}
 
       />
