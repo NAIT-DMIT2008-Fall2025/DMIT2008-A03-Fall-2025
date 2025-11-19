@@ -2,9 +2,11 @@ import {useEffect, useState} from 'react'
 
 import {useRouter} from 'next/router'
 
+import Container from '@mui/material/Container'
+import Typography from '@mui/material/Typography'
+
 import LoadingCircle from '@components/LoadingCircle'
 import NavBar from '@components/NavBar'
-
 import { getAgency } from '@utils/api/agencies'
 
 export default function AgencyPage() {
@@ -48,6 +50,11 @@ export default function AgencyPage() {
 
   return <>
     <NavBar />
-    <h1>Agency: {agency.name} ({agency.abbrev})</h1>
+    <Container>
+    <Typography variant="h3" component="h1">
+      Agency: {agency.name} ({agency.abbrev})
+    </Typography>
+
+    </Container>
   </>
 }
