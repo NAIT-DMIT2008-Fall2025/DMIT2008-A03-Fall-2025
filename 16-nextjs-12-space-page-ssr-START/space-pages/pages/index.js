@@ -13,9 +13,26 @@ import NavBar from '@components/NavBar';
 
 import { getAgencies } from '@utils/api/agencies'
 
+// this funciton is going to run on the next.js server
+export async function getServerSideProps() {
+  // get the data here.
+  const agencies = await getAgencies()
+  // return the data
+
+  return {
+    props: {
+      agenciesFromServer: agencies
+    }
+  }
+
+}
+
+
+
+
 export default function Home() {
   const [agenciesData, setAgenciesData] = useState([])
-  
+
   useEffect(()=> {
     // fire this on load.
     getAgencies().then((data)=> {
