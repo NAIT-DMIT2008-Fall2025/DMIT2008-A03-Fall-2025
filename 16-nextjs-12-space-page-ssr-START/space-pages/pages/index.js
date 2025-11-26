@@ -32,17 +32,19 @@ export async function getServerSideProps() {
 export default function Home({agenciesFromServer}) {
   console.log("agenciesFromServer")
   console.log(agenciesFromServer)
+  const agenciesData = agenciesFromServer.results
 
 
-  const [agenciesData, setAgenciesData] = useState([])
+  // the client side way of fetch the data.
+  // const [agenciesData, setAgenciesData] = useState([])
 
-  useEffect(()=> {
-    // fire this on load.
-    getAgencies().then((data)=> {
-      console.log(data)
-      setAgenciesData(data.results)
-    })
-  }, [])
+  // useEffect(()=> {
+  //   // fire this on load.
+  //   getAgencies().then((data)=> {
+  //     console.log(data)
+  //     setAgenciesData(data.results)
+  //   })
+  // }, [])
 
 
   return (
