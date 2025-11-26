@@ -24,13 +24,16 @@ export async function getServerSideProps() {
       agenciesFromServer: agencies
     }
   }
-
 }
 
 
+// so the props above is going to be passed into the component
+// which is rendered on the frontend
+export default function Home({agenciesFromServer}) {
+  console.log("agenciesFromServer")
+  console.log(agenciesFromServer)
 
 
-export default function Home() {
   const [agenciesData, setAgenciesData] = useState([])
 
   useEffect(()=> {
