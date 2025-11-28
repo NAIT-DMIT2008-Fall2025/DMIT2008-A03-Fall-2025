@@ -88,8 +88,10 @@ describe('TodoList', () => {
     })
     // after the button click
     // the input should have no value
+    // make it fail first
+    expect(inputElement.value).toBe('')
     // list element should have text.
-
+    expect(listElement).toHaveTextContent(EXPECTED_STRING)
   })
 
 
