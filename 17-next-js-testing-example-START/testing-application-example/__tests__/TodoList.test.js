@@ -60,9 +60,24 @@ describe('TodoList', () => {
     const inputElement = screen.getByLabelText("New Todo")
     // get the button with getByText
     const button = screen.getByText("Add Todo")
-
+    // let's get the list element from the data-testid prop
+    // which does nothing except allows to select it in our
+    // tests
+    const listElement = screen.getByTestId("todo-item-list")
     // update the input with some text
-    // check to see if the input has thext
+    const EXPECTED_STRING = "get excited about testing in js"
+    // this is going fire the onTodoTextChange in the TodoList
+    fireEvent.change( // this fires the change event
+      inputElement, // this is the element to fire on.
+      { // a simulated event object
+        target: {
+          value: EXPECTED_STRING
+        }
+      }
+    )
+
+    // check to see if the input has thet
+
     // we're going to click the button
     // after the button click
     // the input should have no value
