@@ -77,8 +77,15 @@ describe('TodoList', () => {
     )
 
     // check to see if the input has thet
-
+    // make it fail first
+    // expect(inputElement.value).not.toBe(EXPECTED_STRING)
+    // make it pass
+    expect(inputElement.value).toBe(EXPECTED_STRING)
     // we're going to click the button
+    // for more complex state changes
+    act(()=> {
+      button.click()
+    })
     // after the button click
     // the input should have no value
     // list element should have text.
