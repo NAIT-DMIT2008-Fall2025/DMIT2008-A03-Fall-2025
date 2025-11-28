@@ -24,15 +24,20 @@ describe('TodoList', () => {
     // toBeInTheDocument is part of larger set
     // of matchers on expect that you can add.
     // docs: https://github.com/testing-library/jest-dom
-    // expect(titleElement).toBeInTheDocument()
+    expect(titleElement).toBeInTheDocument()
     // a quick way to make your tests fail
     // before you make them pass is to add the
     // .not. before your matcher.
-    expect(titleElement).not.toBeInTheDocument()
+    // expect(titleElement).not.toBeInTheDocument()
     // after the above fails you can just remove it
     // I'm leaving this here for context so that
     // you folks have a quick way to check that your
     // test works.
-
   })
+
+  // create a test that's going to
+  // render the component
+  // your select the inputElement by getLabelText
+  // get the button with getByText
+  // check if they're in the document.
 })
