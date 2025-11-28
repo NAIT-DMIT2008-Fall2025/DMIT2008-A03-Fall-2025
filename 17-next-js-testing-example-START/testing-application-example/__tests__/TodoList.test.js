@@ -37,7 +37,14 @@ describe('TodoList', () => {
 
   // create a test that's going to
   // render the component
-  // your select the inputElement by getLabelText
-  // get the button with getByText
-  // check if they're in the document.
+  test('renders button and input element', () => {
+    render(<TodoList />)
+    // your select the inputElement by getLabelText
+    const inputElement = screen.getByLabelText("New Todo")
+    // get the button with getByText
+    const button = screen.getByText("Add Todo")
+    // check if they're in the document.
+    expect(inputElement).not.toBeInTheDocument()
+    expect(button).not.toBeInTheDocument()
+  })
 })

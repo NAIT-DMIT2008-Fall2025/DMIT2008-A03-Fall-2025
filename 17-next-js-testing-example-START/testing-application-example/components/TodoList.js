@@ -53,7 +53,9 @@ export default function TodoList () {
           data-testid="add-new-todo-button"
           variant="contained"
           onClick={onAddTodoClick}
-        >Add Todo</Button>
+        >
+          Add Todo
+        </Button>
       </Grid>
 
 
