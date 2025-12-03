@@ -1,15 +1,15 @@
-import { useState } from 'react';
+import { useState, createContext } from 'react';
 // import
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 
+
+const AppNotificationContext = createContext({})
+
+
 // we're wrap our entire application with this component.
 export default function AppNotification({children}) {
   const [open, setOpen] = useState(false);
-
-  const handleClick = () => {
-    setOpen(true);
-  };
 
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
@@ -24,7 +24,7 @@ export default function AppNotification({children}) {
   // a custom message and custom color
   // we're going to make this a hook.
 
-  return <>
+  return <AppNotificationContext.Provider value={{}}>
     {children}
     <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
       <Alert
@@ -36,5 +36,5 @@ export default function AppNotification({children}) {
         This is a success Alert inside a Snackbar!
       </Alert>
     </Snackbar>
-  </>
+  </AppNotificationContext.Provider>
 }
