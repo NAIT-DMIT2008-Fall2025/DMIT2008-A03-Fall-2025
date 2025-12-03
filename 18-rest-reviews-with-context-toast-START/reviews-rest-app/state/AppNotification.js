@@ -18,6 +18,12 @@ export default function AppNotification({children}) {
 
     setOpen(false);
   };
+
+  // after the break we're going to use context
+  // to share functionality to open the snackbar message with
+  // a custom message and custom color
+  // we're going to make this a hook.
+
   return <>
     {children}
     <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
