@@ -1,8 +1,11 @@
 import '../styles/globals.css'
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+import AppNotification from '../state/AppNotification'
 
+function MyApp({ Component, pageProps }) {
+  return <AppNotification>
+    <Component {...pageProps} />
+  </AppNotification>
 }
 
 export default MyApp
