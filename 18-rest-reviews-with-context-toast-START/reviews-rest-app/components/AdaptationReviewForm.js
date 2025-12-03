@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 
 import Button from '@mui/material/Button';
 
@@ -14,11 +14,19 @@ import TextField from '@mui/material/TextField';
 
 import { postReview } from '../utils/api/reviews';
 
+// import the context from the user
+import { AppNotificationContext } from '../state/AppNotification';
+
+
 export default function AdaptationReviewForm(props) {
   const [title, setTitle] = useState("")
   const [comments, setComments] = useState("")
   const [rating, setRating] = useState(0)
-  
+
+  // unpack my AppNotification content
+  const { showNotification } = useContext(AppNotificationContext)
+  // we're going to be able to use this whenever we do an action here.
+
   const handleSubmit = (event) => {
     event.preventDefault()
     if (!isValidForm()) {
@@ -30,8 +38,17 @@ export default function AdaptationReviewForm(props) {
       rating: rating
     }).then((newReviewData)=> {
       props.setReviews([newReviewData, ...props.reviews])
+      showNotification({
+        type: "success",
+        text: `"${title}" is added successfully`
+      })
       resetForm()
-    })    
+    }).catch((error) => {
+      showNotification({
+        type: "error",
+        text: "Error trying to create data"
+      })
+    })
   }
 
   const isValidForm = () => {
@@ -42,7 +59,7 @@ export default function AdaptationReviewForm(props) {
     } else {
       return false
     }
-      
+
   }
 
   const resetForm = () => {
